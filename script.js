@@ -39,7 +39,7 @@ $('#overlay-button').on('click', function(){
     $('.select-energy').addClass('hidden')
     $('.select-goal').addClass('hidden')
     $('#header').addClass('hidden')
-  },500);
+  },1000);
 });
   
 $('#close-overlay').on('click', function(){
