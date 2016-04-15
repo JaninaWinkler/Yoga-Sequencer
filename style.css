@@ -79,7 +79,7 @@ h1 {
   font-weight: bold;
 }
 .overlay{
-  transition: all 1.0s;
+  /*transition: all 1.0s;*/
   position: absolute;
   top: 0;
   left: 0;
@@ -89,8 +89,21 @@ h1 {
   background-color: rgba(0,0,0,0.9);
  }
 
+#bgDimmer{
+  transition: all 0.5s ease-out;
+}
+#popup{
+  transition: all 2.0s ease-out;
+}
+
+img#popup{
+  top: 5%;
+  height: 500px;
+  width: 500px;
+}
+
 .modal{ /*Visible part of the overlay*/
-  transition: all 2.0s;
+  /*transition: all 2.0s;*/
   width: 80%;
   height: 90%;
   line-height: 200px;
@@ -104,7 +117,7 @@ h1 {
 }
 
 .hidden{
-  visibility: hidden;
+ display: none;
 }
 
 #close-overlay{

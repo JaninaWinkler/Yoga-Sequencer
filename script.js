@@ -30,18 +30,24 @@ $('#userTime').on('change', function() {
   }
 });
 
-$('#overlay-button').on('click', function(){
+function removeOverlay(){
+  $('#bgDimmer').removeClass('overlay');
+  $('#popup').removeClass('modal');
+  $('#close-overlay').addClass('hidden');
+  $('img#popup').addClass('hidden');
+}
+
+function activateOverlay(){
   $('#bgDimmer').addClass('overlay');
   setTimeout(function(){
     $('#popup').addClass('modal');
     $('#close-overlay').removeClass('hidden')
-  },500);
-});
-  
-$('#close-overlay').on('click', function(){
-  $('#bgDimmer').removeClass('overlay');
-  $('#popup').removeClass('modal')
-  $('#close-overlay').addClass('hidden');
-});
+    $('img#popup').removeClass('hidden');
+  },200);
+}
+
+$('#overlay-button').on('click', activateOverlay);  
+$('#close-overlay').on('click', removeOverlay);
+$('#bgDimmer').on('click', removeOverlay);
 
 });
