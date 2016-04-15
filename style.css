@@ -92,15 +92,17 @@ h1 {
 .modal{ /*Visible part of the overlay*/
   transition: all 2.0s;
   width: 80%;
-  height: 90%;
+  height: 80%;
   line-height: 200px;
   position: absolute;
   top: 5%; 
   left: 10%;  
   background-color: #cfa268;
+  opacity: 0.3;
   border-radius: 20px;
   text-align: center;
   z-index: 11;
+  margin: 50px auto;
 }
 
 .hidden{

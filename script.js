@@ -35,6 +35,10 @@ $('#overlay-button').on('click', function(){
   setTimeout(function(){
     $('#popup').addClass('modal');
     $('#close-overlay').removeClass('hidden')
+    $('.select-time').addClass('hidden')
+    $('.select-energy').addClass('hidden')
+    $('.select-goal').addClass('hidden')
+    $('#header').addClass('hidden')
   },500);
 });
   
@@ -42,6 +46,10 @@ $('#close-overlay').on('click', function(){
   $('#bgDimmer').removeClass('overlay');
   $('#popup').removeClass('modal')
   $('#close-overlay').addClass('hidden');
+  $('.select-time').removeClass('hidden')
+  $('.select-energy').removeClass('hidden')
+  $('.select-goal').removeClass('hidden')
+  $('#header').removeClass('hidden')
 });
 
 });
