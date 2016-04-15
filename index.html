@@ -8,13 +8,14 @@
     <script type="text/javascript" src="script.js"></script>
   </head>
 <body>
+<div id="bgDimmer"></div>
+<div id="popup"><button id="close-overlay" class="hidden"  name="popup button">X</button></div>
 
 <div id="header">
 <h1>My Yoga!</h1>
 </div>
 
 <div id="jumbotron">
-<div class="user-display">
 <div class="select-time">
 <p class="question">How much time do you have?</p>
    <input id="userTime" type="range" min="1" max="3" step="1" onchange="userTimeTextbox.value = userTime.value" />
@@ -33,9 +34,8 @@
 <input type="checkbox" class="checkbox" id="userInputMove" value="Move">Stretch
 <input type="checkbox" class="checkbox" id="userInputStrength" value="Strength">Strength
 <input type="checkbox" class="checkbox" id="userInputRelax" value="Relax">Relax
+<button id="overlay-button" name="button">Ugly Overlay Button</button>
 </div>
-</div>
-
 <div id="footer">
 My yoga
 </div>

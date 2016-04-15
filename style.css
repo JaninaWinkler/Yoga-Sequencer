@@ -78,3 +78,38 @@ h1 {
 .question {
   font-weight: bold;
 }
+.overlay{
+  transition: all 1.0s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.9);
+ }
+
+.modal{ /*Visible part of the overlay*/
+  transition: all 2.0s;
+  width: 80%;
+  height: 90%;
+  line-height: 200px;
+  position: absolute;
+  top: 5%; 
+  left: 10%;  
+  background-color: #cfa268;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 11;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+#close-overlay{
+  float: left;
+  border-radius: 80%;
+  color: darkred;
+  font-weight: bold;
+}
