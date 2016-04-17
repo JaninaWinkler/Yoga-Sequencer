@@ -1,14 +1,17 @@
 require 'yaml'
 
 def main
-  model = load_model(2)
+  model = load_model(3)
   loop do
-    sequence = generate_sequence(model, 10, 20)
+    sequence = generate_sequence(model, 5, 30)
     show_sequence(sequence)
     rating = get_rating
     save_sequence(sequence, rating)
   end
 end
+
+#### TO DO: How to ensure code doesn't return 'undefined method for nil class' when the code runs
+#### out of poses to go to next within the sequence??
 
 def save_sequence(sequence, rating)
   # put it in the db
