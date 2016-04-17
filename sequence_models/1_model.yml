@@ -1,0 +1,18 @@
+---
+Bharadvaja's Twist:
+  Big Toe Pose: 0.5
+  Bound Angle Pose: 0.5
+Big Toe Pose:
+  Boat Pose: 0.5
+  Bound Angle Pose: 0.25
+  Bow Pose: 0.25
+Boat Pose:
+  Bharadvaja's Twist: 0.1
+  Bound Angle Pose: 0.8
+  Savasana: 0.1
+Bound Angle Pose:
+  Bow Pose: 0.5
+  Savasana: 0.5
+Bow Pose:
+  Savasana: 1.0
+Savasana: {}
