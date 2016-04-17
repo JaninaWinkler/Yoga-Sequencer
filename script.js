@@ -1,53 +1,115 @@
 $(document).ready(function() {
+  var intervalInc = 0;
 
-$('input.checkbox').on('change', function() {
+  var hash = {
+    Warrior1: {image: 'beach-yoga.jpg'},
+    Warrior2: {image: 'Creative-yoga-and-sunset-vector-03.jpg'},
+    Warrior3: {image: 'yoga-tree.jpg'},
+    Triangle: {image: 'yoga.jpg'}
+  };
 
+  $('input.checkbox').on('change', function() {
     $('input.checkbox').not(this).prop('checked', false);  
+  });
+  
+  $('#userEnergy').on('change', function() {
+    if ($('#userEnergy').val() == "1") {
+      $('#userEnergyTextbox').val('Turtle');
+    }
+    else if ($('#userEnergy').val() == "3") {
+      $('#userEnergyTextbox').val('Stallion');
+    }
+    else {
+      $('#userEnergyTextbox').val('Puppy');
+    }
+  });
+  
+  $('#userTime').on('change', function() {
+    if ($('#userTime').val() == "1") {
+      $('#userTimeTextbox').val('A bit..');
+    }
+    else if ($('#userTime').val() == "3") {
+      $('#userTimeTextbox').val('Tons!');
+    }
+    else {
+      $('#userTimeTextbox').val('A fair amount.');
+    }
+  });
+  function toggleMainPage(){
+    $('.select-time').toggleClass('hidden');
+    $('.select-energy').toggleClass('hidden');
+    $('.select-goal').toggleClass('hidden');
+    $('#header').toggleClass('hidden');
+  };
+
+  function removeOverlay(){
+    overlayActive= false;
+    clearInterval(slideInterval);
+    $('#bgDimmer').removeClass('overlay');
+    $('#slideshow').removeClass('modal');
+    $('#close-overlay').addClass('hidden');
+    toggleMainPage();
+    $('#slideshow img').remove();
+    intervalInc = 0;
+  };
+
+  function activateOverlay(){
+    startSlideShow();
+    overlayActive = true;
+    $('#bgDimmer').addClass('overlay');
+    setTimeout(function(){
+      $('#slideshow').addClass('modal');
+      $('#close-overlay').removeClass('hidden')
+      toggleMainPage();
+    }, 200);
+  };
+
+  $('#overlay-button').on('click', activateOverlay);  
+  $('#close-overlay').on('click', removeOverlay);
+  $('#bgDimmer').on('click', removeOverlay);
+
+  function loadSlides(){
+    for(var pose in hash)
+    {
+      $('#slideshow').append('<img class="nextSlide" src=' + hash[pose]['image'] + '>');
+    }
+  };
+
+  function removeLastSlide(){
+    var lastSlide = $('img').last().detach();
+    lastSlide.removeClass();
+    lastSlide.prependTo('#slideshow').addClass('nextSlide')
+  }
+
+  function startSlideShow(){  
+    loadSlides();
+    loadSlides();
+    loadSlides();
+    setTimeout(function(){
+      $('img').eq(0).addClass('futureSlide');
+      $('img').eq(0).removeClass('nextSlide');
+      window.slideInterval = setInterval(function(){
+        var totalImages = $('#slideshow img').siblings('img').size();
+        if(intervalInc > 0)
+        {
+          $('img').eq(intervalInc - 1).addClass('pastSlide');
+          $('img').eq(intervalInc - 1).removeClass('activeSlide');
+        }
+        if(intervalInc == totalImages || intervalInc > 1)
+        {
+          $('img').eq(intervalInc - 2).addClass('nextSlide');
+        }
+        $('img').eq(intervalInc).addClass('activeSlide');
+        $('img').eq(intervalInc).removeClass('futureSlide');
+        $('img').eq(intervalInc + 1).addClass('futureSlide');
+        $('img').eq(intervalInc + 1).removeClass('nextSlide');
+        if(intervalInc <= totalImages)
+        {
+          intervalInc++;
+        }
+      }, 2000);
+    }, 1000);
+  };
+
 });
 
-$('#userEnergy').on('change', function() {
-  if ($('#userEnergy').val() == "1") {
-    $('#userEnergyTextbox').val('Turtle');
-  }
-  else if ($('#userEnergy').val() == "3") {
-    $('#userEnergyTextbox').val('Stallion');
-  }
-  else {
-    $('#userEnergyTextbox').val('Puppy');
-  }
-
-});
-
-$('#userTime').on('change', function() {
-  if ($('#userTime').val() == "1") {
-    $('#userTimeTextbox').val('A bit..');
-  }
-  else if ($('#userTime').val() == "3") {
-    $('#userTimeTextbox').val('Tons!');
-  }
-  else {
-    $('#userTimeTextbox').val('A fair amount.');
-  }
-});
-
-function removeOverlay(){
-  $('#bgDimmer').removeClass('overlay');
-  $('#popup').removeClass('modal');
-  $('#close-overlay').addClass('hidden');
-  $('img#popup').addClass('hidden');
-}
-
-function activateOverlay(){
-  $('#bgDimmer').addClass('overlay');
-  setTimeout(function(){
-    $('#popup').addClass('modal');
-    $('#close-overlay').removeClass('hidden')
-    $('img#popup').removeClass('hidden');
-  },200);
-}
-
-$('#overlay-button').on('click', activateOverlay);  
-$('#close-overlay').on('click', removeOverlay);
-$('#bgDimmer').on('click', removeOverlay);
-
-});

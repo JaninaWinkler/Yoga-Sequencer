@@ -7,7 +7,7 @@ body {
   font-family: Tahoma, sans-serif, serif;
   color: white;
   font-size: 2em;
-  }
+}
 
 #header {
   height: 10%;
@@ -79,7 +79,7 @@ h1 {
   font-weight: bold;
 }
 .overlay{
-  /*transition: all 1.0s;*/
+  transition: all 1.0s;
   position: absolute;
   top: 0;
   left: 0;
@@ -89,31 +89,20 @@ h1 {
   background-color: rgba(0,0,0,0.9);
  }
 
-#bgDimmer{
-  transition: all 0.5s ease-out;
-}
-#popup{
-  transition: all 2.0s ease-out;
-}
-
-img#popup{
-  top: 5%;
-  height: 500px;
-  width: 500px;
-}
-
 .modal{ /*Visible part of the overlay*/
-  /*transition: all 2.0s;*/
+  transition: all 2.0s;
   width: 80%;
-  height: 90%;
+  height: 80%;
   line-height: 200px;
   position: absolute;
   top: 5%; 
   left: 10%;  
   background-color: #cfa268;
+  opacity: 0.3;
   border-radius: 20px;
   text-align: center;
   z-index: 11;
+  margin: 50px auto;
 }
 
 .hidden{
@@ -123,6 +112,59 @@ img#popup{
 #close-overlay{
   float: left;
   border-radius: 80%;
-  color: darkred;
+  background: white;
   font-weight: bold;
+}
+
+#overlay-button {
+  background: white;
+}
+
+#slideshow img.pastSlide{
+  border-radius: 20px;
+  transition: all 2.0s;
+  position: absolute;
+  top: 25%;
+  height: 250px;
+  width: 250px;
+  left: 5%;
+  z-index: 18;
+  opacity: 0.75;
+}
+
+#slideshow img.activeSlide{
+  border-radius: 20px;
+  transition: opacity 2.0s ease-in-out, all 2.0s;
+  position: absolute;
+  top: 5%;
+  height: 500px;
+  width: 500px;
+  left: 25%;
+  z-index: 20;
+  opacity: 1.0;
+}
+
+#slideshow img.nextSlide{
+  transition: all 2.0s;
+  border-radius: 20px;
+  position: absolute;
+  top: 25%;
+  height: 250px;
+  width: 250px;
+  left: 30%;
+  z-index: 18;
+  opacity: 0;
+}
+
+#slideshow img.futureSlide{
+  visibility: visible;
+  border-radius: 20px;
+  transition: all 2.0s, opacity 2.0s ease-in;
+  position: absolute;
+  top: 25%;
+  height: 250px;
+  width: 250px;
+  left: 70%;
+  z-index: 18;
+  opacity: .75;
 }
