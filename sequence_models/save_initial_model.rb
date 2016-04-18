@@ -182,7 +182,7 @@ model =   {
     'Runners Lunge'=> 0.4,
     'Low Lunge'=> 0.3,
     'Head-To-Knee-Pose'=> 0.2,
-    'Savasana'=> 0.1
+    'Downward Dog'=> 0.1
   }, 
     'Low Lunge'=> {
     'Head-To-Knee-Pose' => 0.4,
@@ -195,9 +195,9 @@ model =   {
     'Low Lunge' => 0.3,
     'Warrior 3' => 0.2, 
     'Sleeping Pigeon'=> 0.2,
-    'Savasana'=> 0.3
+    'Downward Dog'=> 0.3
   },
-    'Savasana'=> {
+    'Downward Dog'=> {
     }
 }
 

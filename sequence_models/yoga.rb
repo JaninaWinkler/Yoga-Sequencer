@@ -3,7 +3,7 @@ require 'yaml'
 def main
   model = load_model(3)
   loop do
-    sequence = generate_sequence(model, 5, 30)
+    sequence = generate_sequence(model, 1, 30)
     show_sequence(sequence)
     rating = get_rating
     save_sequence(sequence, rating)
@@ -28,6 +28,9 @@ def load_model(version)
 end
 
 def finished?(sequence, model)
+  puts "Last element of sequence: #{model[sequence.last]}"
+  puts "Values of last element of sequence: #{model[sequence.last].values}"
+
   model[sequence.last].values.reduce(0.0) { |sum, value| sum + value } == 0.0
 end
 
@@ -42,6 +45,8 @@ end
 
 def insert_initial_pose(seq, model)
   seq << model.keys.sample
+  ## debug below
+  puts seq.last
 end
 
 def insert_subsequent_pose(seq, model)
