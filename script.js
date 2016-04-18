@@ -76,10 +76,16 @@ $(document).ready(function() {
   function loadSlides(){
     // The next step is to iterate through an array to find the proper pose name, and then match that with 
     // the hash to retrieve the correlating image url for that array element.
-    for(var pose in hash)
+    for (var i = 0; i < yogaArray.length; i++)
     {
-      $('#slideshow').append('<img class="nextSlide" src=' + hash[pose]['image'] + '>');
-    }
+      for(var pose in hash)
+      {
+        if(yogaArray[i] == pose)
+          {
+            $('#slideshow').append('<img class="nextSlide" src=' + hash[pose]['image'] + '>');
+          };
+      }
+    };
   };
 
   function removeLastSlide(){
@@ -90,8 +96,8 @@ $(document).ready(function() {
 
   function startSlideShow(){  
     loadSlides();
-    loadSlides();
-    loadSlides();
+    // loadSlides();
+    // loadSlides();
     setTimeout(function(){
       $('img').eq(0).addClass('futureSlide');
       $('img').eq(0).removeClass('nextSlide');
