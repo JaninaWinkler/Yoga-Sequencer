@@ -9,7 +9,7 @@ model =   {
     'Chair Pose'=> 0.2
   },
   'Hands on Hips'=> {
-    'Foward Fold'=>0.4,
+    'Forward Fold'=>0.4,
     'Mountain'=>0.1,
     'Upward Salute'=>0.4,
     'Samasthitihi'=>0.1
@@ -82,7 +82,7 @@ model =   {
     'Halfway Lift'=> 0.5
   },
   'Handstand'=> {
-    'Foward Fold' => 0.7,
+    'Forward Fold' => 0.7,
     'Four-Limb Staff'=> 0.3
   },
     'Upward Salute'=> {
