@@ -8,3 +8,42 @@
 8_model: transition_up Model
 9_model: transition_to_savasana
 
+case TIME
+When 1:
+  increase time between images
+When 2:
+  default time between images
+When 3:
+  decrease time between images
+
+case ENERGY
+When 1 || 'turtle':
+  3 sequences, 2 transitions
+When 2 || 'puppy':
+When 3 || 'stallion':
+
+case GOAL
+When 'Stretch': {
+  'standing'=> 0.3,
+  'seated'=> 0.4,
+  'core'=> 0.0,
+  'backbend'=> 0.3,
+},
+When 'Move': {
+  'standing'=> 0.6,
+  'seated'=> 0.1,
+  'core'=> 0.1,
+  'backbend'=> 0.2,
+},
+When 'Strength': {
+  'standing'=> 0.6,
+  'seated'=> 0.1,
+  'core'=> 0.2,
+  'backbend'=> 0.1,
+},
+When 'Relax': {
+  'standing'=> 0.2,
+  'seated'=> 0.7,
+  'core'=> 0.0,
+  'backbend'=> 0.1,
+}

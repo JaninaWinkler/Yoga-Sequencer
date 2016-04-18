@@ -19,7 +19,7 @@ def multiple_sequences
 end
 
 def single_sequence
-  model = load_model(4)
+  model = load_model(6)
 
   loop do
     sequence = generate_sequence(model, 10, 14)
@@ -95,4 +95,4 @@ def show_sequence(sequences)
 end
 
 single_sequence
-multiple_sequences
+# multiple_sequences
