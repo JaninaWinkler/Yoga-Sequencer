@@ -28,8 +28,8 @@ def load_model(version)
 end
 
 def finished?(sequence, model)
-  puts "Last element of sequence: #{model[sequence.last]}"
-  puts "Values of last element of sequence: #{model[sequence.last].values}"
+  # puts "Last element of sequence: #{model[sequence.last]}"
+  # puts "Values of last element of sequence: #{model[sequence.last].values}"
 
   model[sequence.last].values.reduce(0.0) { |sum, value| sum + value } == 0.0
 end
@@ -46,7 +46,7 @@ end
 def insert_initial_pose(seq, model)
   seq << model.keys.sample
   ## debug below
-  puts seq.last
+  # puts seq.last
 end
 
 def insert_subsequent_pose(seq, model)
@@ -69,8 +69,9 @@ def populate_sequence(seq, model)
 end
 
 def show_sequence(sequence)
+  print sequence
   sequence.each_with_index do |pose, index|
-    puts "#{index + 1}: #{pose}"
+    # puts "#{index + 1}: #{pose}"
   end
 end
 

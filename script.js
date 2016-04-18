@@ -1,6 +1,11 @@
 $(document).ready(function() {
   var intervalInc = 0;
 
+  var yogaArray = ['Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
+                   'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
+                   'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
+                   'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',]
+
   var hash = {
     Warrior1: {image: 'beach-yoga.jpg'},
     Warrior2: {image: 'Creative-yoga-and-sunset-vector-03.jpg'},
@@ -69,6 +74,8 @@ $(document).ready(function() {
   $('#bgDimmer').on('click', removeOverlay);
 
   function loadSlides(){
+    // The next step is to iterate through an array to find the proper pose name, and then match that with 
+    // the hash to retrieve the correlating image url for that array element.
     for(var pose in hash)
     {
       $('#slideshow').append('<img class="nextSlide" src=' + hash[pose]['image'] + '>');
