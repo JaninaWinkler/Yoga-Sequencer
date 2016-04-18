@@ -45,6 +45,11 @@ def load_model(version)
 end
 
 def finished?(sequence, model)
+<<<<<<< HEAD
+=======
+  # puts "Last element of sequence: #{model[sequence.last]}"
+  # puts "Values of last element of sequence: #{model[sequence.last].values}"
+>>>>>>> 85b139b5b745fcaaaf60f829b5e7a1567f8099cb
 
   model[sequence.last].values.reduce(0.0) { |sum, value| sum + value } == 0.0
 end
@@ -62,6 +67,11 @@ def insert_initial_pose(seq, model)
   ## Having every sequence start and end in mountain pose or downward facing dog?
   ## seq << 'Mountain'
   seq << model.keys.sample
+<<<<<<< HEAD
+=======
+  ## debug below
+  # puts seq.last
+>>>>>>> 85b139b5b745fcaaaf60f829b5e7a1567f8099cb
 end
 
 def insert_subsequent_pose(seq, model)
@@ -83,11 +93,18 @@ def populate_sequence(seq, model)
   end
 end
 
+<<<<<<< HEAD
 def show_sequence(sequences)
   sequences.each do | sequence |
     sequence.each_with_index do |pose, index|
       puts "#{index + 1}: #{pose}"
     end
+=======
+def show_sequence(sequence)
+  print sequence
+  sequence.each_with_index do |pose, index|
+    # puts "#{index + 1}: #{pose}"
+>>>>>>> 85b139b5b745fcaaaf60f829b5e7a1567f8099cb
   end
 end
 

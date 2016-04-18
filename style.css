@@ -97,8 +97,7 @@ h1 {
   position: absolute;
   top: 5%; 
   left: 10%;  
-  background-color: #cfa268;
-  opacity: 0.3;
+  background-color: rgba(207,162,104,0.3);
   border-radius: 20px;
   text-align: center;
   z-index: 11;
@@ -106,17 +105,66 @@ h1 {
 }
 
 .hidden{
-  visibility: hidden;
+ display: none;
 }
 
 #close-overlay{
   float: left;
   border-radius: 80%;
-  background: white;
+  background-color: rgba(0,0,0,0,0.3);
   font-weight: bold;
+  opacity: 0.6;
 }
 
 #overlay-button {
   background: white;
 }
 
+div#slideshow img.pastSlide{
+  border-radius: 20px;
+  transition: all 2.0s;
+  position: absolute;
+  top: 25%;
+  height: 250px;
+  width: 250px;
+  left: 5%;
+  z-index: 18;
+  opacity: 0.75;
+}
+
+div#slideshow img.activeSlide{
+  border-radius: 20px;
+  transition: opacity 2.0s ease-in-out, all 2.0s;
+  position: absolute;
+  top: 5%;
+  height: 500px;
+  width: 500px;
+  left: 25%;
+  z-index: 20;
+  opacity: 1.0;
+}
+
+div#slideshow img.nextSlide{
+  transition: all 2.0s;
+  border-radius: 20px;
+  position: absolute;
+  top: 25%;
+  height: 250px;
+  width: 250px;
+  left: 30%;
+  z-index: 18;
+  opacity: 0;
+}
+
+div#slideshow img.futureSlide{
+  visibility: visible;
+  border-radius: 20px;
+  transition: all 2.0s, opacity 2.0s ease-in;
+  position: absolute;
+  top: 25%;
+  height: 250px;
+  width: 250px;
+  left: 70%;
+  z-index: 18;
+  opacity: .75;
+}
