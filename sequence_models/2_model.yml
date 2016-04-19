@@ -170,7 +170,7 @@ Sleeping Pigeon:
   Runners Lunge: 0.4
   Low Lunge: 0.3
   Head-To-Knee-Pose: 0.2
-  Downward Dog: 0.1
+  Downward Facing Dog: 0.1
 Low Lunge:
   Head-To-Knee-Pose: 0.4
   Runners Lunge: 0.2
@@ -181,5 +181,7 @@ Head-To-Knee-Pose:
   Low Lunge: 0.3
   Warrior 3: 0.2
   Sleeping Pigeon: 0.2
-  Downward Dog: 0.3
-Downward Dog: {}
+  Downward Facing Dog: 0.3
+Downward Facing Dog:
+  Transition to Top of Mat: 1.0
+Transition to Top of Mat: {}

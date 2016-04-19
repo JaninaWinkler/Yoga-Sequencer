@@ -3,30 +3,27 @@ require 'yaml'
 model = {
 
   'Wheel'=> {
-  'Corpse'=> 0.3,
+  'Corpse'=> 0.4,
   'Bridge'=> 0.2,
   'Reclining Bound Angle Pose'=> 0.4,
-  'Seated Meditation'=> 0.1
   },
   'Bridge'=> {
   'Wheel'=> 0.2,
-  'Corpse'=> 0.3,
+  'Corpse'=> 0.4,
   'Reclining Bound Angle Pose'=> 0.4,
-  'Seated Meditation'=> 0.1,
   },
   'Camel'=> {
   'Hero'=> 0.4, 
   'Reclining Hero Pose'=> 0.2,
   'Table Top'=> 0.2,
-  'Easy Pose'=> 0.1,
-  'Seated Meditation'=> 0.1
+  'Easy Pose'=> 0.2
   },
   'Hero'=> {
   'Camel'=> 0.3,
   'Reclining Hero Pose'=> 0.3,
   'Forward Fold' => 0.2,
   'Easy Pose'=> 0.1,
-  'Seated Meditation'=> 0.1
+  'Ragdoll'=> 0.1
   },
   'Reclining Hero Pose'=> {
   'Hero'=> 0.6,
@@ -35,15 +32,14 @@ model = {
   },
   'Cobra'=> {
   'Table Top'=> 0.2,
-  'Downward Dog'=> 0.2,
+  'Downward Facing Dog'=> 0.2,
   'Plank'=> 0.2,
   'Lie on Stomach'=> 0.4
   },
   'Extended Puppy Dog'=> {
   'Table Top'=> 0.4,
-  'Downward Dog'=> 0.3,
+  'Downward Facing Dog'=> 0.4,
   'Plank'=> 0.2,
-  'Seated Meditation'=> 0.1
   },
   'Table Top'=> {
   'Camel'=> 0.1,
@@ -51,10 +47,10 @@ model = {
   'Extended Puppy Dog'=> 0.1,
   'Cat'=> 0.1,
   'Cow'=> 0.1,
-  'Downward Dog'=> 0.2,
+  'Downward Facing Dog'=> 0.2,
   'Plank'=> 0.1,
   'Easy Pose'=> 0.1,
-  'Seated Meditation'=> 0.1
+  'Ragdoll'=> 0.1
   },
   'Cat'=> {
   'Hero'=> 0.3,
@@ -66,18 +62,18 @@ model = {
   'Cat'=> 0.4,
   'Extended Puppy Dog'=> 0.3, 
   },
-  'Downward Dog'=> {
+  'Downward Facing Dog'=> {
   'Extended Puppy Dog'=> 0.1,
   'Table Top'=> 0.1,
   'Plank'=> 0.2,
   'Forward Fold'=> 0.2,
   'Three-Legged Downward Facing Dog'=> 0.2, 
   'Easy Pose'=> 0.1, 
-  'Seated Meditation'=> 0.1
+  'Ragdoll'=> 0.1
   }, 
   'Plank'=> {
   'Table Top'=> 0.2,
-  'Downward Dog'=> 0.2,
+  'Downward Facing Dog'=> 0.2,
   'Lie on Stomach'=> 0.6,
   },
   'Lie on Stomach'=> {
@@ -101,8 +97,7 @@ model = {
   'Lie on Stomach'=> 0.1,
   'Fish'=> 0.2,
   'Easy Pose'=> 0.1,
-  'Reclining Bound Angle Pose'=> 0.1,
-  'Seated Meditation'=> 0.1
+  'Reclining Bound Angle Pose'=> 0.2
   },
   'Sphinx'=> {
   'Lie on Stomach'=> 0.7,
@@ -113,60 +108,59 @@ model = {
   },
   'Forward Fold' => {
   'Table Top'=> 0.1,
-  'Downward Dog'=> 0.1,
+  'Downward Facing Dog'=> 0.1,
   'Plank'=> 0.1,
-  'Squat'=> 0.2,
+  'Squat'=> 0.1,
   'Standing Backbend' => 0.3,
   'Easy Pose'=> 0.1,
-  'Seated Meditation'=> 0.1  
+  'Ragdoll'=> 0.2  
   },
   'Squat'=> {
   'Hero'=> 0.2,
   'Table Top'=> 0.1,
-  'Downward Dog'=> 0.1,
+  'Downward Facing Dog'=> 0.1,
   'Plank'=> 0.1,
   'Corpse'=> 0.1,
   'Forward Fold' => 0.2,
   'Easy Pose'=> 0.1,
-  'Seated Meditation'=> 0.1
+  'Ragdoll'=> 0.1
   },
   'Standing Backbend' => {
-  'Forward Fold' => 0.7,
+  'Ragdoll'=> 0.2,
+  'Forward Fold' => 0.5,
   'Squat'=> 0.3
   },
   'Wild Thing'=> {
   'Wheel'=> 0.3,
-  'Downward Dog'=> 0.3,
+  'Downward Facing Dog'=> 0.3,
   'Three-Legged Downward Facing Dog'=> 0.4,
   },
   'Three-Legged Downward Facing Dog'=> {
-  'Downward Dog'=> 0.4, 
+  'Downward Facing Dog'=> 0.4, 
   'Wild Thing'=> 0.3,
   'Fallen Triangle'=> 0.3
   },
   'Fallen Triangle'=> {
-  'Downward Dog'=> 0.4, 
+  'Downward Facing Dog'=> 0.4, 
   'Three-Legged Downward Facing Dog'=> 0.6
   },
   'Easy Pose'=> {
-    'Hero'=> 0.1,
+    'Hero'=> 0.2,
     'Table Top'=> 0.1,
     'Plank'=> 0.1,
-    'Squat'=> 0.2,
+    'Squat'=> 0.3,
     'Forward Fold'=> 0.1,
-    'Downward Dog'=> 0.1,
+    'Downward Facing Dog'=> 0.1,
     'Corpse'=> 0.1,
-    'Lie on Stomach'=> 0.1,
-    'Seated Meditation'=> 0.1
   },
   'Reclining Bound Angle Pose'=> {
     'Easy Pose'=> 0.2,
-    'Seated Meditation'=> 0.2,
     'Wheel'=> 0.2,
     'Bridge'=> 0.2,
     'Corpse'=> 0.2,
+    'Fish'=> 0.2
   },
-  'Seated Meditation'=> {
+  'Ragdoll'=> {
 
   }
 }

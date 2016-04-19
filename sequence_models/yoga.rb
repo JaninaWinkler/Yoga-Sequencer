@@ -9,12 +9,12 @@ def multiple_sequences
   core_model = load_model(5)
   backbend_model = load_model(6)
   loop do
-    transition_sequence = generate_sequence(transition_model, 5, 10)
-    standing_sequence = generate_sequence(standing_model, 5, 10)
-    transition_sequence1 = generate_sequence(transition_model, 3, 5)
-    seated_sequence = generate_sequence(seated_model, 5, 10)
-    standing_sequence1 = generate_sequence(standing_model, 5, 10)
-    sequences = [transition_sequence, standing_sequence, transition_sequence1, seated_sequence, standing_sequence1]
+    transition_sequence = generate_sequence(transition_model, 5, 7)
+    standing_sequence = generate_sequence(standing_model, 5, 7)
+    transition_sequence1 = generate_sequence(core_model, 5, 7)
+    seated_sequence = generate_sequence(seated_model, 5, 7)
+    standing_sequence1 = generate_sequence(backbend_model, 5, 7)
+    sequences = [transition_sequence, standing_sequence, transition_sequence, transition_sequence1, transition_sequence, seated_sequence, transition_sequence, standing_sequence1]
     show_sequence(sequences)
     rating = get_rating
     save_sequence(standing_sequence, rating)
@@ -22,7 +22,7 @@ def multiple_sequences
 end
 
 def single_sequence
-  model = load_model(4)
+  model = load_model(3)
 
   loop do
     sequence = generate_sequence(model, 10, 15)
@@ -76,12 +76,12 @@ end
 def insert_initial_pose(seq, model)
   ## Having every sequence start and end in mountain pose or downward facing dog?
   ## seq << 'Mountain'
-  if model.include?('Easy Pose') 
-    seq << 'Easy Pose'
+  if model.include?('Squat') 
+    seq << 'Squat'
   elsif model.include?('Mountain')
     seq << 'Mountain'
   else 
-    puts 'Whaaaaa??'
+    seq.keys.sample
   end
   ## debug below
   # puts seq.last
@@ -114,7 +114,7 @@ def show_sequence(sequences)
   end
 end
 
-single_sequence
+# single_sequence
 
 # standing_sequence
-# multiple_sequences
+multiple_sequences

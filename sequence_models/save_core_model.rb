@@ -1,43 +1,50 @@
 require 'yaml'
 
 model = {
+  'Squat'=> {
+  'Downward Facing Dog'=> 0.1,
+  'Plank'=> 0.1,
+  'Easy Pose'=> 0.1,
+  'Table Top'=> 0.1,
+  'Chair'=> 0.1,
+  'Crow'=> 0.2,
+  'Childs Pose'=> 0.1,
+  'Forward Fold'=> 0.1,
+  'Ragdoll'=> 0.1
+  },
   'Boat'=> {
   'Shoulder Stand'=> 0.1,
-  'Table Top'=> 0.1,
-  'Corpse'=> 0.2,
-  'Easy Pose'=> 0.2,
+  'Corpse'=> 0.3,
+  'Easy Pose'=> 0.3,
   'Reclined knee-to-chest'=> 0.1,
   'Forward Fold'=> 0.1,
-  'Plow'=> 0.1,
-  'Seated Meditation'=> 0.1
+  'Plow'=> 0.1
   },
   'Plow'=> {
   'Shoulder Stand'=> 0.3,
   'Corpse'=> 0.3,
   'Easy Pose'=> 0.2,
-  'Reclined knee-to-chest'=> 0.1,
-  'Seated Meditation'=> 0.1
+  'Reclined knee-to-chest'=> 0.2,
   },
   'Dolphin'=> {
-  'Downward Dog'=> 0.1,
+  'Downward Facing Dog'=> 0.1,
   'Plank'=> 0.1,
   'Headstand'=> 0.3,
   'Table Top'=> 0.2,
-  'Childs Pose'=> 0.2,
-  'Seated Meditation'=> 0.1
+  'Childs Pose'=> 0.3
   },
-  'Downward Dog'=> {
+  'Downward Facing Dog'=> {
   'Dolphin'=> 0.1,
   'Plank'=> 0.2,
   'Table Top'=> 0.2,
   'Three-Legged Downward Facing Dog'=> 0.2,
   'Forward Fold'=> 0.1,
   'Childs Pose'=> 0.1,
-  'Seated Meditation'=> 0.1
+  'Ragdoll'=> 0.1
   },
   'Plank'=> {
   'Dolphin'=> 0.2,
-  'Downward Dog'=> 0.2,
+  'Downward Facing Dog'=> 0.2,
   'Four-Limb Staff'=> 0.2,
   'Table Top'=> 0.2,
   'Knee-to-Arm Plank'=> 0.2
@@ -47,23 +54,21 @@ model = {
   },
   'Headstand'=> {
   'Childs Pose'=> 0.6,
-  'Downward Dog'=> 0.1, 
+  'Downward Facing Dog'=> 0.1, 
   'Plank'=> 0.1,
   'Table Top'=> 0.1,
   'Easy Pose'=> 0.1
   },
   'Shoulder Stand'=> {
   'Fish'=> 0.6,
-  'Corpse'=> 0.1,
-  'Plow'=> 0.2,
-  'Seated Meditation'=> 0.1
+  'Corpse'=> 0.2,
+  'Plow'=> 0.2
   },
   'Upward Plank'=> {
   'Boat'=> 0.3,
-  'Corpse'=> 0.2,
+  'Corpse'=> 0.3,
   'Easy Pose'=> 0.3,
-  'Reclined knee-to-chest'=> 0.1,
-  'Seated Meditation'=> 0.1
+  'Reclined knee-to-chest'=> 0.1
   },
   'Reclined knee-to-chest'=> {
   'Boat'=> 0.4,
@@ -72,32 +77,35 @@ model = {
   },
   'Table Top'=> {
   'Dolphin'=> 0.2,
-  'Downward Dog'=> 0.2, 
+  'Downward Facing Dog'=> 0.2, 
   'Plank'=> 0.2,
   'Headstand'=> 0.1,
   'Cat'=> 0.1,
   'Easy Pose'=> 0.1,
-  'Seated Meditation'=> 0.1
+  'Ragdoll'=> 0.1
   }, 
   'Cat'=> {
-  'Downward Dog'=> 0.5,
+  'Downward Facing Dog'=> 0.5,
   'Table Top'=> 0.5,
   },
   'Chair'=> {
   'Warrior 3'=> 0.4,
-  'Forward Fold'=> 0.6
+  'Forward Fold'=> 0.4,
+  'Ragdoll'=> 0.2
   },
   'Warrior 3'=> {
-  'Forward Fold'=> 0.6,
-  'Chair'=> 0.4
+  'Forward Fold'=> 0.2,
+  'Chair'=> 0.4,
+  'Ragdoll'=> 0.2
   },
   'Crow'=> {
-  'Downward Dog'=> 0.3, 
+  'Downward Facing Dog'=> 0.3, 
   'Plank'=> 0.3,
-  'Forward Fold'=> 0.4    
+  'Forward Fold'=> 0.2,
+  'Ragdoll'=> 0.2    
   },
   'Three-Legged Downward Facing Dog'=> {
-  'Downward Dog'=> 0.5,
+  'Downward Facing Dog'=> 0.5,
   'Knee-to-Arm Plank'=> 0.5
   },
   'Knee-to-Arm Plank'=> {
@@ -107,10 +115,10 @@ model = {
   'Arm-Balance Split'=> 0.3,
   },
   'Arm-Balance Split'=> {
-  'Downward Dog'=> 0.2,
+  'Downward Facing Dog'=> 0.2,
   'Plank'=> 0.2,
   'Three-Legged Downward Facing Dog'=> 0.3,
-  'Knee-to-Arm Plank'=> 0.3,
+  'Knee-to-Arm Plank'=> 0.3
   },
   'Corpse'=> {
   'Boat'=> 0.2,
@@ -118,30 +126,28 @@ model = {
   'Easy Pose'=> 0.1,
   'Reclined knee-to-chest'=> 0.1,
   'Plow'=> 0.2,
-  'Fish'=> 0.1,
-  'Seated Meditation'=> 0.1,
+  'Fish'=> 0.2,
   },
   'Childs Pose'=> {
   'Dolphin'=> 0.1,
-  'Downward Dog'=> 0.2, 
+  'Downward Facing Dog'=> 0.2, 
   'Plank'=> 0.1,
   'Four-Limb Staff'=> 0.1,
   'Headstand'=> 0.1,
   'Table Top'=> 0.1,
   'Cat'=> 0.1,
-  'Easy Pose'=> 0.1,
-  'Seated Meditation'=> 0.1
+  'Easy Pose'=> 0.2
   },
   'Fish'=> {
   'Corpse'=> 1.0,
   },
   'Forward Fold' => {
-  'Downward Dog'=> 0.1,
+  'Downward Facing Dog'=> 0.2,
   'Plank'=> 0.1,
   'Chair'=> 0.2,
   'Warrior 3'=> 0.2,
   'Crow'=> 0.2,
-  'Seated Meditation'=> 0.2
+  'Ragdoll'=> 0.1
   },
   'Easy Pose'=> {
     'Boat'=> 0.2,
@@ -151,9 +157,9 @@ model = {
     'Upward Plank'=> 0.1,
     'Plow'=> 0.1,
     'Forward Fold'=> 0.1,
-    'Seated Meditation'=> 0.1
+    'Ragdoll'=> 0.1,
   },
-  'Seated Meditation'=> {
+  'Ragdoll'=> {
 
   }
 }
