@@ -1,6 +1,21 @@
 require 'yaml'
 
 model =   {
+  'Mountain'=> {
+    'Warrior 1'=> 0.2,
+    'Warrior 2'=> 0.1,
+    'Warrior 3'=> 0.1,
+    'High Lunge'=> 0.1,
+    'Low Lunge'=> 0.05,
+    'Pyramid'=> 0.05,
+    'Tree Pose'=> 0.05,
+    'Dancers Pose'=> 0.05,
+    'Five-Pointed Star'=> 0.05,
+    'Extended Hand-To-Big-Toe'=> 0.05,
+    'Knee-To-Chest'=> 0.1,
+    'Eagle'=> 0.05,
+    'Triangle'=> 0.05
+  },
   'Warrior 1'=> {
     'Warrior 2'=> 0.3,
     'Warrior 3'=> 0.1,

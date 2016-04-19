@@ -1,10 +1,13 @@
 require 'yaml'
+require 'pry'
+
 
 def multiple_sequences
   standing_model = load_model(2)
   transition_model = load_model(3)
   seated_model = load_model(4)
-
+  core_model = load_model(5)
+  backbend_model = load_model(6)
   loop do
     transition_sequence = generate_sequence(transition_model, 5, 10)
     standing_sequence = generate_sequence(standing_model, 5, 10)
@@ -19,10 +22,21 @@ def multiple_sequences
 end
 
 def single_sequence
-  model = load_model(6)
+  model = load_model(4)
 
   loop do
-    sequence = generate_sequence(model, 10, 14)
+    sequence = generate_sequence(model, 10, 15)
+    sequences = [sequence]
+    show_sequence(sequences)
+    rating = get_rating
+    save_sequence(sequence, rating)
+  end
+end
+
+def standing_sequence
+  standing_model = load_model(3)
+  loop do
+    sequence = generate_sequence(standing_model, 6, 10)
     sequences = [sequence]
     show_sequence(sequences)
     rating = get_rating
@@ -62,7 +76,13 @@ end
 def insert_initial_pose(seq, model)
   ## Having every sequence start and end in mountain pose or downward facing dog?
   ## seq << 'Mountain'
-  seq << model.keys.sample
+  if model.include?('Easy Pose') 
+    seq << 'Easy Pose'
+  elsif model.include?('Mountain')
+    seq << 'Mountain'
+  else 
+    puts 'Whaaaaa??'
+  end
   ## debug below
   # puts seq.last
 end
@@ -95,4 +115,6 @@ def show_sequence(sequences)
 end
 
 single_sequence
+
+# standing_sequence
 # multiple_sequences

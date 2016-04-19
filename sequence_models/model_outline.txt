@@ -1,26 +1,28 @@
 * 1_model: Mock Model N/A
-* 2_model: Standing Model
-* 3_model: Transition Model
-4_model: Seated Model
-5_model: Backbend Model
-6_model: Core Model
+* 2_model: Standing Model (6, 10) - BEGIN (Mountain) END (Final Downward Facing Dog)
+* 3_model: Transition Model (3, 6) - BEGIN (Downward Dog, samasthitihi) END (Mountain)
+* 4_model: Seated Model (3, 6) - BEGIN (Easy Pose) END (Seated Meditation)
+* 5_model: Core Model (3, 6) - BEGIN (Easy Pose) END (Seated Meditation)
+* 6_model: Backbend Model (4, 7) - BEGIN (Easy Pose) END (Seated Meditation)
+
+## To implement
 7_model: transition_down Model
 8_model: transition_up Model
 9_model: transition_to_savasana
 
-case TIME
-When 1:
+case ENERGY
+When 1  || 'turtle':
   increase time between images
-When 2:
+When 2 || 'puppy':
   default time between images
-When 3:
+When 3 || 'stallion':
   decrease time between images
 
-case ENERGY
-When 1 || 'turtle':
+case TIME
+When 1:
   3 sequences, 2 transitions
-When 2 || 'puppy':
-When 3 || 'stallion':
+When 2:
+When 3:
 
 case GOAL
 When 'Stretch': {

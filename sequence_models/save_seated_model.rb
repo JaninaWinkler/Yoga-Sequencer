@@ -6,15 +6,14 @@ model =   {
   'Easy Pose'=> 0.1,
   'Fire Log'=> 0.1,
   'Gate'=> 0.1,
-  'Head-to-knee Forward Bend'=> 0.025,
+  'Head-to-knee Forward Bend'=> 0.05,
   'Hero'=> 0.1,
   'Toes Pose'=> 0.1,
   'Heron'=> 0.1,
   'Marichis Pose'=> 0.1,
-  'Reclining Hero Pose'=> 0.05,
   'Side-Reclining Leg Lift'=> 0.05,
   'Wide-Angle Seated Fold'=> 0.05,
-  'Savasana'=> 0.025
+  'Seated Meditation'=> 0.05
   },
   'Bound Angle'=> {
   'Bharadvajas Twist'=> 0.05,
@@ -29,7 +28,7 @@ model =   {
   'Seated Forward Bend'=> 0.1,
   'Wide-Angle Seated Fold'=> 0.1,
   'Corpse Pose'=> 0.05,
-  'Savasana'=> 0.05
+  'Seated Meditation'=> 0.05
   },
   'Cow Face'=> {
   'Bharadvajas Twist'=> 0.1,
@@ -43,7 +42,7 @@ model =   {
   'Seated Forward Bend'=> 0.1,
   'Wide-Angle Seated Fold'=> 0.1,
   'Corpse Pose'=> 0.1, 
-  'Savasana'=> 0.1
+  'Seated Meditation'=> 0.1
   },
   'Easy Pose'=> {
   'Bound Angle'=> 0.1,
@@ -55,7 +54,7 @@ model =   {
   'Seated Forward Bend'=> 0.1,
   'Wide-Angle Seated Fold'=> 0.1,
   'Corpse Pose'=> 0.1,
-  'Savasana'=> 0.1
+  'Seated Meditation'=> 0.1
   },
   'Fire Log'=> {
   'Bound Angle'=> 0.1,
@@ -68,11 +67,11 @@ model =   {
   'Side-Reclining Leg Lift'=> 0.1,
   'Wide-Angle Seated Fold'=> 0.1,
   'Corpse Pose'=> 0.05,
-  'Savasana'=> 0.05
+  'Seated Meditation'=> 0.05
   },
   'Fish'=> {
   'Corpse Pose'=> 0.7,
-  'Savasana'=> 0.1,
+  'Seated Meditation'=> 0.1,
   'Reclining Bound Angle Pose'=>0.2
   }, 
   'Gate'=> {
@@ -84,7 +83,7 @@ model =   {
   'Marichis Pose'=> 0.1,
   'Side-Reclining Leg Lift'=> 0.1,
   'Corpse Pose'=> 0.1,
-  'Savasana'=> 0.1
+  'Seated Meditation'=> 0.1
   },
   'Happy Baby'=> {
   'Easy Pose'=> 0.1,
@@ -95,7 +94,7 @@ model =   {
   'Shoulder Stand'=> 0.1,
   'Supine Twist'=> 0.1,
   'Corpse Pose'=> 0.1,
-  'Savasana'=> 0.1
+  'Seated Meditation'=> 0.1
   },
   'Head-to-knee Forward Bend'=> {
   'Bharadvajas Twist'=> 0.2,
@@ -108,11 +107,10 @@ model =   {
   'Corpse Pose'=> 0.1
   },
   'Hero'=> {
-  'Bharadvajas Twist'=> 0.1,
+  'Bharadvajas Twist'=> 0.2,
   'Easy Pose'=> 0.1,
-  'Gate'=> 0.2,
-  'Heron'=> 0.1,
-  'Reclining Hero Pose'=> 0.4,
+  'Gate'=> 0.3,
+  'Heron'=> 0.2,
   'Side-Reclining Leg Lift'=> 0.1,
   },
   'Toes Pose'=> {
@@ -135,7 +133,7 @@ model =   {
   'Shoulder Stand'=> 0.2,
   'Supine Twist'=> 0.2,
   'Corpse Pose'=> 0.1,
-  'Savasana'=> 0.1,
+  'Seated Meditation'=> 0.1,
   },
   'Marichis Pose'=> {
   'Cow Face'=> 0.1,
@@ -146,7 +144,7 @@ model =   {
   'Seated Forward Bend'=> 0.1,
   'Wide-Angle Seated Fold'=> 0.1,
   'Corpse Pose'=> 0.2,
-  'Savasana'=> 0.1
+  'Seated Meditation'=> 0.1
   },
   'Plow'=> {
   'Fish'=> 0.2, 
@@ -154,7 +152,7 @@ model =   {
   'Reclining Bound Angle Pose'=> 0.1,
   'Shoulder Stand'=> 0.2,
   'Corpse Pose'=> 0.2,
-  'Savasana'=> 0.1
+  'Seated Meditation'=> 0.1
   },
   'Reclining Bound Angle Pose'=> {
   'Bound Angle'=> 0.1,
@@ -165,7 +163,7 @@ model =   {
   'Reclining Hand-to-Big-Toe Pose'=> 0.1,
   'Supine Twist'=> 0.1,
   'Corpse Pose'=> 0.1,
-  'Savasana'=> 0.1
+  'Seated Meditation'=> 0.1
   }, 
   'Reclining Hand-to-Big-Toe Pose'=> {
   'Happy Baby'=> 0.2,
@@ -173,17 +171,14 @@ model =   {
   'Reclining Bound Angle Pose'=> 0.2,
   'Supine Twist'=> 0.2,
   'Corpse Pose'=> 0.1,
-  'Savasana'=> 0.1
-  },
-  'Reclining Hero Pose'=> {
-  'Hero'=>1.0
+  'Seated Meditation'=> 0.1
   },
   'Lotus'=> {
   'Bound Angle'=> 0.2,
   'Easy Pose'=> 0.4,
   'Seated Forward Bend'=> 0.2,
   'Corpse Pose'=> 0.1,
-  'Savasana'=> 0.1
+  'Seated Meditation'=> 0.1
   },
   'Seated Forward Bend'=> {
   'Bharadvajas Twist'=> 0.05,
@@ -200,7 +195,7 @@ model =   {
   'Shoulder Stand'=> 0.1,
   'Wide-Angle Seated Fold'=> 0.1,
   'Corpse Pose'=> 0.05,
-  'Savasana'=> 0.05,
+  'Seated Meditation'=> 0.05,
   },
   'Side-Reclining Leg Lift'=> {
   'Bound Angle'=> 0.2,
@@ -221,7 +216,7 @@ model =   {
   'Head-to-knee Forward Bend'=> 0.2,
   'Seated Forward Bend'=> 0.2,
   'Corpse Pose'=> 0.1,
-  'Savasana'=> 0.1
+  'Seated Meditation'=> 0.1
   },
   'Supine Twist'=> {
   'Happy Baby'=> 0.2,
@@ -229,7 +224,7 @@ model =   {
   'Reclining Bound Angle Pose'=> 0.1,
   'Seated Forward Bend'=> 0.1,
   'Corpse Pose'=> 0.2,
-  'Savasana'=> 0.2,
+  'Seated Meditation'=> 0.2,
   },
   'Corpse Pose'=> {
   'Fish'=> 0.1,
@@ -240,9 +235,9 @@ model =   {
   'Reclining Hand-to-Big-Toe Pose'=> 0.1,
   'Shoulder Stand'=> 0.1,
   'Supine Twist'=> 0.1,
-  'Savasana'=> 0.1
+  'Seated Meditation'=> 0.1
   },
-  'Savasana'=> {
+  'Seated Meditation'=> {
   }
 }
 
