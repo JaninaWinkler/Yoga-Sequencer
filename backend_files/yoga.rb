@@ -55,7 +55,7 @@ def get_rating
 end
 
 def load_model(version)
-  YAML.load(File.read("#{version}_model.yml"))
+  YAML.load(File.read("models/#{version}_model.yml"))
 end
 
 def finished?(sequence, model)

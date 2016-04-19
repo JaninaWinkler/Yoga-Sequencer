@@ -2,7 +2,7 @@ require 'yaml'
 require 'pry'
 
 def load_model(version)
-  YAML.load(File.read("#{version}_model.yml"))
+  YAML.load(File.read("models/#{version}_model.yml"))
 end
 
 def create_outline(time, start)
