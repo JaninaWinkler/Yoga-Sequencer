@@ -5,19 +5,6 @@
 * 5_model: Core Model (3, 6) - BEGIN (Squat) END (Ragdoll)
 * 6_model: Backbend Model (4, 7) - BEGIN (Squat) END (Ragdoll)
 
-## To implement
-7_model: transition_down Model
-8_model: transition_up Model
-9_model: transition_to_savasana
-
-case ENERGY
-When 1  || 'turtle':
-  increase time between images
-When 2 || 'puppy':
-  default time between images
-When 3 || 'stallion':
-  decrease time between images
-
 case TIME
 When 1:
   4 sequences, 2 transitions
