@@ -52,23 +52,6 @@ When 'Relax': {
   'backbend'=> 0.1,
 }
 
-FOR create_sequence USER INPUT
+Master_sequence_generator used to generate larger scale sequence, takes into account time and start position
 
-  # puts "Time? 1, 2 or 3?"
-  # time = gets.chomp
-  # case time 
-  #   when '1' || 'A bit..'
-  #     min = 3
-  #     max = 6
-  #     puts "3-6"
-  #   when '2' || 'A fair amount.'
-  #     min = 5
-  #     max = 7
-  #     puts "5-7"
-  #   when '3' || 'Tons!'
-  #     min = 7
-  #     max = 9
-  #     puts "7-9"
-  #   else
-  #     puts "huh?"
-  #   end 
+ 
