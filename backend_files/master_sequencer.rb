@@ -5,19 +5,25 @@ def load_model(version)
   YAML.load(File.read("models/#{version}_model.yml"))
 end
 
-def create_outline(time, start)
+def create_outline(time, start, focus)
+  if focus == 'Stretch'
+    sequence_model = load_model(7)
+  elsif focus == 'Move'
+    sequence_model = load_model(8)
+  elsif focus == 'Strength'
+    sequence_model = load_model(9)
+  elsif focus == 'Relax'
+    sequence_model = load_model(10)
+  else 
     sequence_model = load_model(1)
-  # loop do
-  if time == '1'
-    sequence = generate_outline_sequence(sequence_model, start, 3, 5)
-  elsif time == '2'
-    sequence = generate_outline_sequence(sequence_model, start, 5, 7)
-  elsif time == '3'
-    sequence = generate_outline_sequence(sequence_model, start, 7, 9)
   end
-    sequences = [sequence]
-    show_sequence(sequences)
-  # end
+    if time == '1'
+      sequence = generate_outline_sequence(sequence_model, start, 3, 5)
+    elsif time == '2'
+      sequence = generate_outline_sequence(sequence_model, start, 5, 7)
+    elsif time == '3'
+      sequence = generate_outline_sequence(sequence_model, start, 7, 9)
+    end
 end
 
 def create_sequence(type)
@@ -70,6 +76,8 @@ def insert_initial_sequence(seq, start, model)
 end
 
 def insert_subsequent_sequence(seq, model)
+  ## This is where the weight of each type of sequence is determined based on goal
+  ## entered as input
   r = rand
   acc = 0.0
   model[seq.last].each do |key, value|
@@ -135,10 +143,12 @@ def get_rating
   gets.chomp != 'n'
 end
 
+puts "Focus?"
+focus = gets.chomp
 puts "How much time?"
 time = gets.chomp
 puts "<"
 puts "Start where?"
 start = gets.chomp
-create_outline(time, start)
+create_outline(time, start, focus)
 # create_sequence('Standing')
