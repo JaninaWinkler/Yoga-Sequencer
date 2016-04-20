@@ -1,18 +1,34 @@
 ---
-Bharadvaja's Twist:
-  Big Toe Pose: 0.5
-  Bound Angle Pose: 0.5
-Big Toe Pose:
-  Boat Pose: 0.5
-  Bound Angle Pose: 0.25
-  Bow Pose: 0.25
-Boat Pose:
-  Bharadvaja's Twist: 0.1
-  Bound Angle Pose: 0.8
+Standing:
+  Standing: 0.2
+  Transition: 0.3
+  Seated: 0.2
+  Core: 0.2
+  Backbend: 0.1
+Transition:
+  Standing: 0.4
+  Seated: 0.2
+  Core: 0.2
+  Backbend: 0.2
+Seated:
+  Standing: 0.1
+  Transition: 0.1
+  Seated: 0.3
+  Core: 0.2
+  Backbend: 0.2
   Savasana: 0.1
-Bound Angle Pose:
-  Bow Pose: 0.5
-  Savasana: 0.5
-Bow Pose:
-  Savasana: 1.0
+Core:
+  Standing: 0.1
+  Transition: 0.1
+  Seated: 0.3
+  Core: 0.1
+  Backbend: 0.4
+  Savasana: 0.1
+Backbend:
+  Standing: 0.1
+  Transition: 0.1
+  Seated: 0.5
+  Core: 0.1
+  Backbend: 0.1
+  Savasana: 0.1
 Savasana: {}

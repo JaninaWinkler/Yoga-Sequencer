@@ -4,43 +4,45 @@ model =   {
   'Mountain'=> {
     'Samasthitihi'=> 0.1,
     'Upward Salute'=> 0.4,
-    'Hands on Hips'=> 0.2,
+    'Hands on Hips'=> 0.1,
     'Forward Fold' => 0.1,
-    'Chair Pose'=> 0.2
+    'Chair'=> 0.2,
+    'Stand at Top of Mat'=> 0.1
   },
   'Hands on Hips'=> {
     'Forward Fold'=>0.4,
     'Mountain'=>0.1,
-    'Upward Salute'=>0.4,
-    'Samasthitihi'=>0.1
+    'Upward Salute'=>0.3,
+    'Samasthitihi'=>0.1,
+    'Stand at Top of Mat'=> 0.1
     },
   'Halfway Lift'=> {
     'Forward Fold'=> 0.4,
     'Plank'=> 0.2,
-    'Downward Facing Dog'=> 0.1,
-    'Final Downward Facing Dog'=> 0.1,
+    'Downward Facing Dog'=> 0.2,
     'Four-Limb Staff'=>0.2
   },
   'Big Toe Pose'=> {
     'Forward Fold'=> 0.3,
-    'Halfway Lift'=> 0.3,
+    'Halfway Lift'=> 0.2,
     'Upward Salute'=> 0.2,
-    'Plank'=> 0.2
+    'Plank'=> 0.2,
+    'Stand at Top of Mat'=> 0.1
     },
   'Forward Fold'=> {
     'Upward Salute'=> 0.2,
     'Halfway Lift'=> 0.2,
     'Plank'=> 0.1,
     'Big Toe Pose'=> 0.1,
-    'Final Downward Facing Dog'=>0.1,
     'Downward Facing Dog'=>0.1,
     'Step to Lunge'=> 0.1,
-    'Chair Pose'=> 0.1
+    'Chair'=> 0.1,
+    'Stand at Top of Mat'=> 0.1
   },
   'Plank'=> {
     'Four-Limb Staff'=> 0.5,
-    'Final Downward Facing Dog'=> 0.1,
-    'Downward Facing Dog'=> 0.4
+    'Downward Facing Dog'=> 0.4,
+    'Table Top'=> 0.1
   },
   'Four-Limb Staff'=> {
     'Upward Facing Dog'=> 0.4,
@@ -75,11 +77,13 @@ model =   {
   },
   'Upward Facing Dog'=> {
     'Downward Facing Dog'=> 0.9,
-    'Final Downward Facing Dog'=> 0.1
+    'Four-Limb Staff'=> 0.1
   },
   'Float to Top of Mat'=> {
-    'Forward Fold'=> 0.5,
-    'Halfway Lift'=> 0.5
+    'Forward Fold'=> 0.4,
+    'Halfway Lift'=> 0.3,
+    'Stand at Top of Mat'=> 0.2,
+    'Mountain'=> 0.1
   },
   'Handstand'=> {
     'Forward Fold' => 0.7,
@@ -91,34 +95,36 @@ model =   {
     'Hands on Hips' => 0.2
   },
     'Samasthitihi'=> {
-    'Mountain'=> 0.3,
+    'Mountain'=> 0.2,
     'Forward Fold'=> 0.1,
     'Upward Salute'=> 0.4,
-    'Chair Pose'=> 0.2
+    'Chair'=> 0.2,
+    'Stand at Top of Mat'=> 0.1
   },
     'Downward Facing Dog'=> {
-      'Final Downward Facing Dog'=>0.1,
+      'Stand at Top of Mat'=> 0.1,
       'Step to Lunge' => 0.2,
       'Float to Top of Mat'=> 0.3, 
       'Plank'=>0.2,
       'Handstand'=> 0.2
     }, 
     'Step to Lunge'=> {
-      'Downward Facing Dog'=> 0.3,
+      'Downward Facing Dog'=> 0.2,
       'Plank'=> 0.2,
       'Forward Fold'=> 0.2,
       'Halfway Lift'=> 0.1,
-      'Chair Pose'=> 0.1,
-      'Handstand'=> 0.1
+      'Chair'=> 0.1,
+      'Handstand'=> 0.1,
+      'Stand at Top of Mat'=> 0.1
     },
-    'Chair Pose'=> {
+    'Chair'=> {
       'Forward Fold'=> 0.3,
       'Samasthitihi'=> 0.2,
       'Mountain'=> 0.1,
       'Upward Salute'=> 0.3,
-      'Step to Lunge'=> 0.1
+      'Stand at Top of Mat'=> 0.1
     },
-    'Final Downward Facing Dog'=> {
+    'Stand at Top of Mat'=> {
     }
 }
 
