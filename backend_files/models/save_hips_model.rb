@@ -87,7 +87,7 @@ model = {
   'Happy Baby'=> 0.3,
   'Thread The Needle'=> 0.3,
   'Reclining Bound Angle Pose'=> 0.3,
-  'Staff'=> 0.1,
+  'Staff'=> 0.1
   },
   'Happy Baby'=> {
   'Corpse'=> 0.2,
@@ -118,7 +118,7 @@ model = {
   'Corpse'=> 0.1,
   'Happy Baby'=> 0.4,
   'Thread The Needle'=>0.2,
-  'Staff'=> 0.2,
+  'Staff'=> 0.2
   },
   'Staff'=> {
   'Forward Fold' => 0.2,

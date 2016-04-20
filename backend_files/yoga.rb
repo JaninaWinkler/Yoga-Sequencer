@@ -26,7 +26,9 @@ def single_sequence
 
   loop do
     sequence = generate_sequence(model, 10, 15)
-    sequences = [sequence]
+    sequence1 = generate_sequence(model, 10, 15)
+    sequence2 = generate_sequence(model, 10, 15)
+    sequences = [sequence, sequence1, sequence2]
     show_sequence(sequences)
     rating = get_rating
     save_sequence(sequence, rating)

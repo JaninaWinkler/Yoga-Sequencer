@@ -20,6 +20,12 @@ model =   {
   'Hips'=> 0.2, 
   'Savasana'=> 0.1
   },
+  'Transition'=> {
+  'Standing'=> 0.1,
+  'Seated'=> 0.4,
+  'Backbend'=> 0.2,
+  'Hips'=> 0.3,
+  },
   'Hips'=> {
   'Transition'=> 0.1,
   'Seated'=> 0.4,
