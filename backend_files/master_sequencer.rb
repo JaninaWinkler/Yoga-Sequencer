@@ -18,30 +18,45 @@ def create_outline(time, start, focus)
     sequence_model = load_model(1)
   end
     if time == '1'
-      sequence = generate_outline_sequence(sequence_model, start, 3, 5)
-    elsif time == '2'
       sequence = generate_outline_sequence(sequence_model, start, 5, 7)
+    elsif time == '2'
+      sequence = generate_outline_sequence(sequence_model, start, 6, 8)
     elsif time == '3'
       sequence = generate_outline_sequence(sequence_model, start, 7, 9)
     end
 end
 
+### TO DO: Set min/max length based on model..
 def create_sequence(type)
   if type == 'Standing'
     sequence_model = load_model(2)
+    min = 7
+    max= 10
   elsif type == 'Transition'
     sequence_model = load_model(3)
+    min = 5
+    max= 7
   elsif type == 'Seated'
     sequence_model = load_model(4)
+    min = 5
+    max= 9
   elsif type == 'Core'
     sequence_model = load_model(5)
+    min = 3
+    max= 6
   elsif type == 'Backbend'
     sequence_model = load_model(6)
+    min = 3
+    max= 6
+  elsif type == 'Hips'
+    sequence_model = load_model(11)
+    min = 4
+    max= 7
   elsif type == 'Savasana'
     rating = get_rating
     save_sequence(sequence, rating)
   end
-    sequence = generate_sequence(sequence_model, 5, 5)
+    sequence = generate_sequence(sequence_model, min, max)
     sequences = [sequence]
     show_sequence(sequences)
 end
@@ -112,6 +127,7 @@ def insert_subsequent_pose(seq, model)
   model[seq.last].each do |key, value|
     acc += value
     if r <= acc
+      # binding.pry
       seq << key
       break
     end

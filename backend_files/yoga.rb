@@ -22,7 +22,7 @@ def multiple_sequences
 end
 
 def single_sequence
-  model = load_model(3)
+  model = load_model(11)
 
   loop do
     sequence = generate_sequence(model, 10, 15)
@@ -114,7 +114,7 @@ def show_sequence(sequences)
   end
 end
 
-# single_sequence
+single_sequence
 
 # standing_sequence
-multiple_sequences
+# multiple_sequences
