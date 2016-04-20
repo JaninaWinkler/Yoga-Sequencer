@@ -26,6 +26,12 @@ model =   {
   'Backbend'=> 0.1,
   'Transition'=> 0.1
   },
+  'Seated'=> {
+  'Standing'=> 0.4,
+  'Transition'=> 0.3,
+  'Backbend'=> 0.1,
+  'Core'=> 0.2
+  },
   'Savasana'=> {
 
   }
