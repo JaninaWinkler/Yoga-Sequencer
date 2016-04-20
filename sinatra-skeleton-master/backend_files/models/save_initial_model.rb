@@ -22,8 +22,9 @@ model =   {
     'Low Lunge' => 0.1,
     'Pyramid'=> 0.1,
     'Five-Pointed Star'=> 0.1,
-    'Knee-To-Chest'=> 0.2,
-    'Twisted Lunge'=> 0.1
+    'Knee-To-Chest'=> 0.1,
+    'Twisted Lunge'=> 0.1,
+    'Downward Facing Dog'=> 0.1
   },
   'Warrior 2'=> {
     'Extended Side Angle'=> 0.2,
@@ -58,7 +59,8 @@ model =   {
     'Half Moon'=> 0.1,
     'Triangle'=> 0.1,
     'Reverse Triangle'=> 0.1,
-    'Five-Pointed Star'=> 0.3
+    'Five-Pointed Star'=> 0.2,
+    'Downward Facing Dog'=> 0.1
   }, 
   'High Lunge'=> {
     'Twisted Lunge'=> 0.2,
@@ -67,15 +69,17 @@ model =   {
     'Five-Pointed Star'=> 0.1,
     'Low Lunge'=> 0.1,
     'Knee-To-Chest'=> 0.1,
-    'Pyramid'=> 0.2
+    'Pyramid'=> 0.1,
+    'Downward Facing Dog'=> 0.1
   },
   'Pyramid'=> {
     'Warrior 1'=> 0.2,
     'Triangle'=> 0.1,
     'Standing Splits'=> 0.2,
-    'Wide-Legged Fold'=> 0.2,
-    'Five-Pointed Star'=> 0.2,
-    'Warrior 3'=> 0.1
+    'Wide-Legged Fold'=> 0.1,
+    'Five-Pointed Star'=> 0.1,
+    'Warrior 3'=> 0.1,
+    'Downward Facing Dog'=> 0.2
   },
   'Twisted Lunge'=> {
     'High Lunge'=> 0.5,
@@ -188,10 +192,11 @@ model =   {
   },
   'Runners Lunge'=> {
     'Sleeping Pigeon'=> 0.3,
-    'Warrior 1'=> 0.3,
+    'Warrior 1'=> 0.2,
     'High Lunge'=> 0.2,
     'Wide-Legged Fold'=> 0.1,
-    'Five-Pointed Star'=> 0.1
+    'Five-Pointed Star'=> 0.1,
+    'Downward Facing Dog'=> 0.1
   },   
   'Sleeping Pigeon'=> {
     'Runners Lunge'=> 0.4,
@@ -200,11 +205,12 @@ model =   {
     'Downward Facing Dog'=> 0.1
   }, 
     'Low Lunge'=> {
-    'Head-To-Knee-Pose' => 0.4,
+    'Head-To-Knee-Pose' => 0.3,
     'Runners Lunge'=> 0.2,
     'Sleeping Pigeon'=> 0.2,
     'Warrior 3'=>0.1,
-    'Warrior 1'=>0.1
+    'Warrior 1'=>0.1,
+    'Downward Facing Dog'=> 0.1,
   },
     'Head-To-Knee-Pose'=> {
     'Low Lunge' => 0.6,

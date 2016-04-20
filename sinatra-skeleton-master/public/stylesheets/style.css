@@ -12,7 +12,7 @@ body {
 #header {
   height: 10%;
   background:#cfa268;
-  opacity: 0.5;
+  opacity: 0.8;
   border:1px solid white;
   width:40%;
   margin:0px auto;
@@ -42,41 +42,46 @@ body {
 }
 
 h1 {
+  font-weight: bold;
+  -webkit-text-stroke: 0.8px black;
   font-family: Tahoma, sans-serif, serif;
   color: white;
   font-size: 1.8em;
 }
 
-.select-time {
-  background-color: #cfa268;
-  opacity: 0.5;
+.select{
+  background-color: rgba(207,162,104,0.9);
+  opacity: 0.8;
   border:1px solid white;
   text-align: center;
+}
+
+.time {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   padding-bottom: 15px;
 }
 
-.select-energy {
-  background-color: #cfa268;
-  opacity: 0.5;
-  border:1px solid white;
-  text-align: center;
+.energy {
   padding-bottom: 15px;
 }
 
-.select-goal {
-  background-color: #cfa268;
-  opacity: 0.5;
-  border:1px solid white;
-  text-align: center;
+.goal {
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   /*padding-bottom: 50px;*/
 }
 
-.question {
+label{
   font-weight: bold;
+  -webkit-text-stroke: 0.8px black;
+}
+
+.question {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  -webkit-text-stroke: 0.8px black;
 }
 .overlay{
   transition: all 1.0s;
@@ -118,6 +123,7 @@ h1 {
 
 #overlay-button {
   background: white;
+  left: 30%;
 }
 
 div#slideshow img.pastSlide{
