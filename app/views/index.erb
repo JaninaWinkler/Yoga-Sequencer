@@ -8,26 +8,28 @@
 </div>
 
 <div id="jumbotron">
-<div class="select time">
-<p class="question">How much time do you have?</p>
-   <input id="userTime" type="range" min="1" max="3" step="1" onchange="userTimeTextbox.value = userTime.value" />
-    <input id="userTimeTextbox" type="text" value="A fair amount."/>
+<form method="post" action="/generate">
+  <div class="select time">
+  <p class="question">How much time do you have?</p>
+     <input id="userTime" type="range" min="1" max="3" step="1" onchange="userTimeTextbox.value = userTime.value" name="time" />
+      <input id="userTimeTextbox" type="text" value="A fair amount."/>
+      <br>
+    </div>
+  <div class="select start">
+  <p class="question">How would you like to start?</p>
+    <input id="userStart" type="range" min="1" max="2" step="1" onchange="userStartTextbox.value = userStart.value" />
+    <input id="userStartTextbox" type="text" name="start" value="Standing"/>
     <br>
   </div>
-<div class="select energy">
-<p class="question">How much energy do you have?</p>
-  <input id="userEnergy" type="range" min="1" max="3" step="1" onchange="userEnergyTextbox.value = userEnergy.value" />
-  <input id="userEnergyTextbox" type="text" value="Puppy"/>
-  <br>
-</div>
-<div class="select goal">
-<p class="question">What's your goal today? </p>
-<input type="checkbox" class="checkbox" id="userInputStretch" value="Stretch"><label>Stretch</label>
-<input type="checkbox" class="checkbox" id="userInputMove" value="Move"><label>Move</label>
-<input type="checkbox" class="checkbox" id="userInputStrength" value="Strength"><label>Strength</label>
-<input type="checkbox" class="checkbox" id="userInputRelax" value="Relax"><label>Relax</label>
-<div><button id="overlay-button" name="button">Create Sequence!</button></div>
-</div>
+  <div class="select goal">
+  <p class="question">What's your goal today? </p>
+  <input type="checkbox" class="checkbox" id="userInputStretch" name="focus" value="Stretch" checked="true"><label>Stretch</label>
+  <input type="checkbox" class="checkbox" id="userInputMove" name="focus" value="Move"><label>Move</label>
+  <input type="checkbox" class="checkbox" id="userInputStrength" name="focus" value="Strength"><label>Strength</label>
+  <input type="checkbox" class="checkbox" id="userInputRelax" name="focus" value="Relax"><label>Relax</label>
+  <div><button id="overlay-button" value="Submit">Create Sequence!</button></div>
+  </div>
+</form>
 <div id="footer">
 My yoga
 </div>

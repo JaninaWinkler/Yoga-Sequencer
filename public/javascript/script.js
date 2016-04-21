@@ -21,15 +21,12 @@ $(document).ready(function() {
     $('input.checkbox').not(this).prop('checked', false);  
   });
   
-  $('#userEnergy').on('change', function() {
-    if ($('#userEnergy').val() == "1") {
-      $('#userEnergyTextbox').val('Turtle');
+  $('#userStart').on('change', function() {
+    if ($('#userStart').val() == "1") {
+      $('#userStartTextbox').val('Seated');
     }
-    else if ($('#userEnergy').val() == "3") {
-      $('#userEnergyTextbox').val('Stallion');
-    }
-    else {
-      $('#userEnergyTextbox').val('Puppy');
+    else if ($('#userStart').val() == "2") {
+      $('#userStartTextbox').val('Standing');
     }
   });
   
