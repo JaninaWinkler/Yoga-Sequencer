@@ -53,15 +53,6 @@ def finished?(sequence, model)
   model[sequence.last].values.reduce(0.0) { |sum, value| sum + value } == 0.0
 end
 
-def generate_sequence(model, min_length = 3, max_length = 7)
-  seq = []
-  until seq.length.between?(min_length, max_length)
-    seq.clear
-    populate_sequence(seq, model)
-  end
-  seq
-end
-
 def generate_outline_sequence(model, start, min_length = 3, max_length = 7)
   seq = []
   until seq.length.between?(min_length, max_length)
@@ -99,6 +90,15 @@ def populate_outline_sequence(seq, start, model)
   until finished?(seq, model)
     insert_subsequent_sequence(seq, model)
   end
+end
+
+def generate_sequence(model, min_length = 3, max_length = 7)
+  seq = []
+  until seq.length.between?(min_length, max_length)
+    seq.clear
+    populate_sequence(seq, model)
+  end
+  seq
 end
 
 def insert_initial_pose(seq, model)
@@ -150,16 +150,18 @@ end
 #   gets.chomp != 'n'
 # end
 
-# def main 
-#   puts "Focus?"
-#   focus = gets.chomp
-#   puts "How much time?"
-#   time = gets.chomp
-#   puts "<"
-#   puts "Start where?"
-#   start = gets.chomp
-#   create_outline(time, start, focus)
-# end 
+def main 
+  puts "Focus?"
+  focus = gets.chomp
+  puts "How much time?"
+  time = gets.chomp
+  puts "<"
+  puts "Start where?"
+  start = gets.chomp
+  create_outline(time, start, focus)
+end 
+
+main
 
 # if $0 == __FILE__ 
 #   main

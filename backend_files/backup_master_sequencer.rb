@@ -3,21 +3,17 @@ require 'pry'
 require 'json'
 
 # module Sequencer
-
+OUTLINE_TIME_CONSTRAINTS = [[3, 5], [4, 6], [5, 7]]
   # Generates a sequence (Array) of yoga poses as Strings based on input
-  def generate(opts = {})
-    defaults = {
-      time: 2,
-      start: 'Standing',
-      focus: 'Stretch'
-    }
-    opts = opts.reverse_merge(defaults)
+  def generate(time, start, focus)
     # Make an outline
-    outline = create_outline(opts[:time], opts[:start], opts[:focus])
+    outline = create_outline(time, start, focus)
     # Make a sequence of poses for each element of the outline
-    sequences = outline.map { |type| create_subsequence(type) }
+    # binding.pry
+    subsequences = outline.map { |type| create_subsequence(type) }
     # Merge each of the sequences into a single array
-    sequences.flatten
+    sequence = subsequences.flatten
+    puts sequence
   end
 
   # private
@@ -27,8 +23,8 @@ def load_model(version)
   YAML.load(File.read("models/#{version}_model.yml"))
 end
 
-def finished?(sequence, model)
-  model[sequence.last].values.reduce(0.0) { |sum, value| sum + value } == 0.0
+def finished?(outline, model)
+  model[outline.last].values.reduce(0.0) { |sum, value| sum + value } == 0.0
 end
 
   # Given a starting position, focus, and time, creates an outline for a sequence as
@@ -36,51 +32,26 @@ end
   def create_outline(time, start, focus)
     # initialize the outline with the start type
     model = load_model(focus) 
-    if time == '1'
-      min = 5
-      max = 7
-    elsif time == '2'
-      min = 6
-      max = 8
-    elsif time == '3'
-      min = 7
-      max = 9
-    end
-      outline = []
+    min, max = OUTLINE_TIME_CONSTRAINTS[time - 1]
+    outline = []
       until outline.length.between?(min, max)
         outline.clear
         outline << start
-        until finished?(outline, model)
-          populate_outline(outline, model)
-        end
+        populate_outline(outline, model, start)
       end
-    # TODO Insert subsequent subsequence types
-    # The final subsequence type is always 'Savasana'
-    # outline << :Savasana
-    # << load_model('Savasana')
+    outline
   end
 
-def populate_outline(outline, model)
-  r = rand
-  acc = 0.0
-  model[outline.last].each do |key, value|
+def populate_outline(outline, model, start)
+  until finished?(outline, model)
+    r = rand
+    acc = 0.0
+    model[outline.last].each do |key, value|
     acc += value
-    if r <= acc
-      outline << key
-      break
-    end 
-  end
-end
-
-def populate_sequence(sequence, model)
-  r = rand
-  acc = 0.0
-  model[sequence.last].each do |key, value|
-    acc += value
-    if r <= acc
-      # binding.pry
-      sequence << key
-      break
+      if r <= acc
+        outline << key
+        break
+      end
     end
   end
 end
@@ -105,26 +76,41 @@ def create_subsequence(type)
   elsif type == 'Hips'
     min = 4
     max= 7
+  elsif type == 'Savasana'
+    min =1
+    max = 1
   end
   sequence = []
-  binding.pry
   until sequence.length.between?(min, max)
     sequence.clear
-    if sequence_model.include?('Squat') 
-      sequence << 'Squat'
-    elsif sequence_model.include?('Mountain')
+    populate_sequence(sequence, sequence_model)
+  end
+  sequence 
+end
+
+def populate_sequence(sequence, sequence_model)
+  if sequence_model.include?('Squat') 
+    sequence << 'Squat'
+  elsif sequence_model.include?('Mountain')
     sequence << 'Mountain'
-    else 
-      sequence << model.keys.sample
-    end
-    sequence
-      until finished?(sequence, sequence_model)
-        populate_sequence(sequence, sequence_model)
+  else 
+    sequence << sequence_model.keys.sample
+  end
+    until finished?(sequence, sequence_model)
+      r = rand
+      acc = 0.0
+      sequence_model[sequence.last].each do |key, value|
+      acc += value
+        if r <= acc
+          sequence << key
+          break
+        end
       end
     end
 end
 
 
-sequence = create_outline('2', 'Standing', 'Stretch')
-puts sequence
+
+
+generate(1, 'Seated', 'Relax')
 
