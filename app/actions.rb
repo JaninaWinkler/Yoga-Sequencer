@@ -5,6 +5,6 @@ end
 
 post '/sequence' do
   @sequence = Sequence.new
-#   @sequence.generate(params[:time], params[:start], params[:focus])
-#   @sequence.save
+  @sequence.sequence_array = @sequence.generate(params[:time], params[:start], params[:focus])
+  @sequence.save
 end

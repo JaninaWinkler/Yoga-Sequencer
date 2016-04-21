@@ -14,7 +14,6 @@ class Sequence < ActiveRecord::Base
 
   # Loads the model based on type of sequence or subsequence
   def load_model(version)
-    binding.pry
     YAML.load(File.read("app/models/sequence_models/#{version}_model.yml"))
   end
 
