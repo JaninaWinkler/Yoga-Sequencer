@@ -1,0 +1,48 @@
+* 1_model: Mock Model N/A
+* 2_model: Standing Model (6, 10) - BEGIN (Mountain) END (Transition to Top of Mat)
+* 3_model: Transition Model (3, 6) - BEGIN (Mountain) END (Stand at Top of Mat)
+* 4_model: Seated Model (3, 6) - BEGIN (Squat) END (Ragdoll)
+* 5_model: Core Model (3, 6) - BEGIN (Squat) END (Ragdoll)
+* 6_model: Backbend Model (4, 7) - BEGIN (Squat) END (Ragdoll)
+* 7_model: Stretch Model 
+8_model: Move Model
+9_model: Strength Model
+10_model: Relax Model
+
+case TIME
+When 1:
+  4 sequences, 2 transitions
+When 2:
+  6 sequences, 3 transitions
+When 3:
+  8 sequences, 4 transitions
+
+case GOAL
+When 'Stretch': {
+  'standing'=> 0.3,
+  'seated'=> 0.4,
+  'core'=> 0.0,
+  'backbend'=> 0.3,
+},
+When 'Move': {
+  'standing'=> 0.6,
+  'seated'=> 0.1,
+  'core'=> 0.1,
+  'backbend'=> 0.2,
+},
+When 'Strength': {
+  'standing'=> 0.6,
+  'seated'=> 0.1,
+  'core'=> 0.2,
+  'backbend'=> 0.1,
+},
+When 'Relax': {
+  'standing'=> 0.2,
+  'seated'=> 0.7,
+  'core'=> 0.0,
+  'backbend'=> 0.1,
+}
+
+Master_sequence_generator used to generate larger scale sequence, takes into account time and start position
+
+ 

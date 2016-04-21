@@ -21,12 +21,15 @@ $(document).ready(function() {
     $('input.checkbox').not(this).prop('checked', false);  
   });
   
-  $('#userStart').on('change', function() {
-    if ($('#userStart').val() == "1") {
-      $('#userStartTextbox').val('Seated');
+  $('#userEnergy').on('change', function() {
+    if ($('#userEnergy').val() == "1") {
+      $('#userEnergyTextbox').val('Turtle');
+    }
+    else if ($('#userEnergy').val() == "3") {
+      $('#userEnergyTextbox').val('Stallion');
     }
     else {
-      $('#userStartTextbox').val('Standing');
+      $('#userEnergyTextbox').val('Puppy');
     }
   });
   
@@ -42,10 +45,9 @@ $(document).ready(function() {
     }
   });
   function toggleMainPage(){
-    $('.select').toggleClass('hidden');
-    $('.select time').toggleClass('hidden');
-    $('.select start').toggleClass('hidden');
-    $('.select goal').toggleClass('hidden');
+    $('.select-time').toggleClass('hidden');
+    $('.select-energy').toggleClass('hidden');
+    $('.select-goal').toggleClass('hidden');
     $('#header').toggleClass('hidden');
   };
 

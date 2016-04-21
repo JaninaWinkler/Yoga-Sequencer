@@ -1,0 +1,33 @@
+
+<div id="bgDimmer"></div>
+<div id="slideshow"><button id="close-overlay" class="hidden"  name="popup button">X</button>
+</div>
+
+<div id="header">
+<h1>My Yoga!</h1>
+</div>
+
+<div id="jumbotron">
+<div class="select time">
+<p class="question">How much time do you have?</p>
+   <input id="userTime" type="range" min="1" max="3" step="1" onchange="userTimeTextbox.value = userTime.value" />
+    <input id="userTimeTextbox" type="text" value="A fair amount."/>
+    <br>
+  </div>
+<div class="select energy">
+<p class="question">How much energy do you have?</p>
+  <input id="userEnergy" type="range" min="1" max="3" step="1" onchange="userEnergyTextbox.value = userEnergy.value" />
+  <input id="userEnergyTextbox" type="text" value="Puppy"/>
+  <br>
+</div>
+<div class="select goal">
+<p class="question">What's your goal today? </p>
+<input type="checkbox" class="checkbox" id="userInputStretch" value="Stretch"><label>Stretch</label>
+<input type="checkbox" class="checkbox" id="userInputMove" value="Move"><label>Move</label>
+<input type="checkbox" class="checkbox" id="userInputStrength" value="Strength"><label>Strength</label>
+<input type="checkbox" class="checkbox" id="userInputRelax" value="Relax"><label>Relax</label>
+<div><button id="overlay-button" name="button">Create Sequence!</button></div>
+</div>
+<div id="footer">
+My yoga
+</div>
