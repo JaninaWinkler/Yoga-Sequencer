@@ -1,4 +1,8 @@
 configure do
+
+require "sinatra/activerecord"
+
+# or set :database_file, "path/to/database.yml"
   # Log queries to STDOUT in development
   if Sinatra::Application.development?
     ActiveRecord::Base.logger = Logger.new(STDOUT)

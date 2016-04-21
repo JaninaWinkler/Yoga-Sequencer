@@ -2,19 +2,20 @@ require 'yaml'
 require 'pry'
 require 'json'
 
-class Sequence
+class Sequence < ActiveRecord::Base
+
   OUTLINE_TIME_CONSTRAINTS = [[2, 4], [3, 5], [4, 6]]
     # Generates a sequence (Array) of yoga poses as Strings based on input
     def generate(time, start, focus)
       outline = create_outline(time, start, focus)
       subsequences = outline.map { |type| create_subsequence(type) }
       sequence = subsequences.flatten
-      puts sequence
     end
 
   # Loads the model based on type of sequence or subsequence
   def load_model(version)
-    YAML.load(File.read("models/#{version}_model.yml"))
+    binding.pry
+    YAML.load(File.read("app/models/sequence_models/#{version}_model.yml"))
   end
 
   def finished?(outline, model)
@@ -25,6 +26,7 @@ class Sequence
     # an Array of Strings representing the types of subsequences
     def create_outline(time, start, focus)
       # initialize the outline with the start type
+      # binding.pry
       model = load_model(focus) 
       min, max = OUTLINE_TIME_CONSTRAINTS[time - 1]
       outline = []
@@ -102,9 +104,7 @@ class Sequence
         end
       end
   end
-
 end
 
-sequence = Sequence.new
-sequence.generate(2, 'Standing', 'Move')
-
+# sequence = Sequence.new
+# sequence.generate(2, 'Standing', 'Move')
