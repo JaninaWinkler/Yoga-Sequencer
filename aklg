@@ -1,0 +1,35 @@
+[33mcommit e5d0d77f8ecbd33f5f84083d0b4ff24c2c7b5dbe[m
+Author: vagrant <vagrant@lighthouse-labs>
+Date:   Fri Apr 15 17:54:39 2016 +0000
+
+    css color adjust
+
+[33mcommit 374535bdc1138e74825ba7e2558971693927c005[m
+Author: vagrant <vagrant@lighthouse-labs>
+Date:   Fri Apr 15 04:17:09 2016 +0000
+
+    remove background elements on sequence creation
+
+[33mcommit 9e28bf5e0d384854f29b48b9d0870463089279a3[m
+Author: James McKeen <jamescmckeen@gmail.com>
+Date:   Thu Apr 14 20:39:49 2016 -0700
+
+    Adding overlay and background dimming css and html with de/activating buttons
+
+[33mcommit e43fcf594183f609ea164210a664eb05011a1134[m
+Author: vagrant <vagrant@lighthouse-labs>
+Date:   Thu Apr 14 23:38:15 2016 +0000
+
+    css div
+
+[33mcommit d2ea7081301e2a8190c71b322e9c8546842816d8[m
+Author: vagrant <vagrant@lighthouse-labs>
+Date:   Thu Apr 14 21:58:02 2016 +0000
+
+    css cleaned up
+
+[33mcommit 2892222dd98c9e9ced793be6f16e730543a0bd3d[m
+Author: vagrant <vagrant@lighthouse-labs>
+Date:   Thu Apr 14 21:44:05 2016 +0000
+
+    basic html and css framework
