@@ -12,7 +12,7 @@ model = {
   'Staff'=> 0.2
   },
   'Staff'=> {
-  'Forward Fold' => 0.3,
+  'Seated Forward Bend' => 0.3,
   'Wide-Legged Fold'=> 0.1,
   'Cow Face'=> 0.1,
   'Bound Angle'=> 0.2,
@@ -20,7 +20,7 @@ model = {
   'Marichis Pose'=> 0.1,
   'Squat'=> 0.1
   },
-  'Forward Fold' => {
+  'Seated Forward Bend' => {
   'Wide-Legged Fold'=> 0.2,
   'Cow Face'=> 0.1,
   'Bound Angle'=> 0.2,
@@ -29,7 +29,7 @@ model = {
   'Staff'=> 0.2
   },
   'Wide-Legged Fold'=> {
-  'Forward Fold' => 0.1, 
+  'Seated Forward Bend' => 0.1, 
   'Cow Face'=> 0.2,
   'Bound Angle'=> 0.2,
   'Corpse'=> 0.2,
@@ -57,7 +57,7 @@ model = {
   'Squat'=> 0.3
   },
   'Cow Face'=> {
-  'Forward Fold' => 0.1,
+  'Seated Forward Bend' => 0.1,
   'Wide-Legged Fold'=> 0.2,
   'Bound Angle'=> 0.2,
   'Corpse'=> 0.1,
@@ -66,7 +66,7 @@ model = {
   'Squat'=> 0.1,
   },
   'Bound Angle'=> {
-  'Forward Fold' => 0.1,
+  'Seated Forward Bend' => 0.1,
   'Wide-Legged Fold'=> 0.1,
   'Cow Face'=> 0.1,
   'Corpse'=> 0.1,
@@ -104,7 +104,7 @@ model = {
   'Squat'=> 0.1
   }, 
   'Marichis Pose'=> {
-  'Forward Fold' => 0.2, 
+  'Seated Forward Bend' => 0.2, 
   'Wide-Legged Fold'=> 0.1,
   'Cow Face'=> 0.1,
   'Bound Angle'=> 0.1,
@@ -121,7 +121,7 @@ model = {
   'Staff'=> 0.2
   },
   'Staff'=> {
-  'Forward Fold' => 0.2,
+  'Seated Forward Bend' => 0.2,
   'Wide-Legged Fold'=> 0.1,
   'Cow Face'=> 0.1,
   'Bound Angle'=> 0.1,

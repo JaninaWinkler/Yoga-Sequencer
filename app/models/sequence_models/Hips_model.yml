@@ -9,7 +9,7 @@ Squat:
   Ragdoll: 0.2
   Staff: 0.2
 Staff:
-  Forward Fold: 0.2
+  Seated Forward Bend: 0.2
   Wide-Legged Fold: 0.1
   Cow Face: 0.1
   Bound Angle: 0.1
@@ -17,7 +17,7 @@ Staff:
   Marichis Pose: 0.1
   Reclining Bound Angle Pose: 0.1
   Squat: 0.2
-Forward Fold:
+Seated Forward Bend:
   Wide-Legged Fold: 0.2
   Cow Face: 0.1
   Bound Angle: 0.2
@@ -25,7 +25,7 @@ Forward Fold:
   Marichis Pose: 0.1
   Staff: 0.2
 Wide-Legged Fold:
-  Forward Fold: 0.1
+  Seated Forward Bend: 0.1
   Cow Face: 0.2
   Bound Angle: 0.2
   Corpse: 0.2
@@ -49,7 +49,7 @@ Low Crescent Lunge:
   Ragdoll: 0.2
   Squat: 0.3
 Cow Face:
-  Forward Fold: 0.1
+  Seated Forward Bend: 0.1
   Wide-Legged Fold: 0.2
   Bound Angle: 0.2
   Corpse: 0.1
@@ -57,7 +57,7 @@ Cow Face:
   Staff: 0.2
   Squat: 0.1
 Bound Angle:
-  Forward Fold: 0.1
+  Seated Forward Bend: 0.1
   Wide-Legged Fold: 0.1
   Cow Face: 0.1
   Corpse: 0.1
@@ -90,7 +90,7 @@ Thread The Needle:
   Staff: 0.1
   Squat: 0.1
 Marichis Pose:
-  Forward Fold: 0.2
+  Seated Forward Bend: 0.2
   Wide-Legged Fold: 0.1
   Cow Face: 0.1
   Bound Angle: 0.1
