@@ -1,8 +1,17 @@
 $(document).ready(function() {
   var intervalInc = 0;
-
-  var poseArray = JSON.parse(data);
   var imageArray = JSON.parse(images);
+
+  $('#post_sequence ').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+      url: '/generate',
+      method: 'post',
+      data: $('input').serialize(),
+      success: function(){
+      }
+    });
+  });
 
 
   // ######### Hash an array for testing loadimages function for slideshow ########
@@ -42,9 +51,10 @@ $(document).ready(function() {
     }
   });
   function toggleMainPage(){
-    $('.select-time').toggleClass('hidden');
-    $('.select-energy').toggleClass('hidden');
-    $('.select-goal').toggleClass('hidden');
+    $('.select').toggleClass('hidden');
+    $('.select time').toggleClass('hidden');
+    $('.select energy').toggleClass('hidden');
+    $('.select goal').toggleClass('hidden');
     $('#header').toggleClass('hidden');
   };
 
@@ -75,20 +85,41 @@ $(document).ready(function() {
   $('#bgDimmer').on('click', removeOverlay);
 
   function loadSlides(){
+    setTimeout(function(){
+      $.ajax({
+        url: '/generate',
+        method: 'get',
+        error: function(){
+        },
+        success: function(data){
+          var poseArray = JSON.parse(data);
+          for (var i = 0; i < poseArray.length; i++){
+            for(var poseInt = 0; poseInt < imageArray.length; poseInt++){
+              var pose = Object.keys(imageArray[poseInt])[0];
+              var poseURL = imageArray[poseInt][pose];
+              if(poseArray[i] == pose){
+                  $('#slideshow').append('<img class="nextSlide" src=' + poseURL + '>');
+              }
+            }
+          }
+        }
+      });
+    }, 1000);
+
     // The next step is to iterate through an array to find the proper pose name, and then match that with 
     // the hash to retrieve the correlating image url for that array element.
-    for (var i = 0; i < poseArray.length; i++)
-    {
-      for(var poseInt = 0; poseInt < imageArray.length; poseInt++)
-      {
-        var pose = Object.keys(imageArray[poseInt])[0];
-        var poseURL = imageArray[poseInt][pose];
-        if(poseArray[i] == pose)
-          {
-            $('#slideshow').append('<img class="nextSlide" src=' + poseURL + '>');
-          };
-      }
-    };
+    // for (var i = 0; i < poseArray.length; i++)
+    // {
+    //   for(var poseInt = 0; poseInt < imageArray.length; poseInt++)
+    //   {
+    //     var pose = Object.keys(imageArray[poseInt])[0];
+    //     var poseURL = imageArray[poseInt][pose];
+    //     if(poseArray[i] == pose)
+    //       {
+    //         $('#slideshow').append('<img class="nextSlide" src=' + poseURL + '>');
+    //       };
+    //   }
+    // };
   };
 
   function removeLastSlide(){

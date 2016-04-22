@@ -1,31 +1,32 @@
 $(document).ready(function() {
   var intervalInc = 0;
 
-  var yogaArray = ['Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
-                   'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
-                   'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
-                   'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',]
+  var poseArray = JSON.parse(data);
+  var imageArray = JSON.parse(images);
 
-  var hash = {
-    Warrior1: {image: 'beach-yoga.jpg'},
-    Warrior2: {image: 'Creative-yoga-and-sunset-vector-03.jpg'},
-    Warrior3: {image: 'yoga-tree.jpg'},
-    Triangle: {image: 'yoga.jpg'}
-  };
+
+  // ######### Hash an array for testing loadimages function for slideshow ########
+  // var yogaArray = ['Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
+  //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
+  //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
+  //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',]
+  // var hash = {
+  //   Warrior1: {image: '/images/beach-yoga.jpg'},
+  //   Warrior2: {image: '/images/Creative-yoga-and-sunset-vector-03.jpg'},
+  //   Warrior3: {image: '/images/yoga-tree.jpg'},
+  //   Triangle: {image: '/images/yoga.jpg'}
+  // };
 
   $('input.checkbox').on('change', function() {
     $('input.checkbox').not(this).prop('checked', false);  
   });
   
-  $('#userEnergy').on('change', function() {
-    if ($('#userEnergy').val() == "1") {
-      $('#userEnergyTextbox').val('Turtle');
-    }
-    else if ($('#userEnergy').val() == "3") {
-      $('#userEnergyTextbox').val('Stallion');
+  $('#userStart').on('change', function() {
+    if ($('#userStart').val() == "1") {
+      $('#userStartTextbox').val('Seated');
     }
     else {
-      $('#userEnergyTextbox').val('Puppy');
+      $('#userStartTextbox').val('Standing');
     }
   });
   
@@ -41,9 +42,10 @@ $(document).ready(function() {
     }
   });
   function toggleMainPage(){
-    $('.select-time').toggleClass('hidden');
-    $('.select-energy').toggleClass('hidden');
-    $('.select-goal').toggleClass('hidden');
+    $('.select').toggleClass('hidden');
+    $('.select time').toggleClass('hidden');
+    $('.select start').toggleClass('hidden');
+    $('.select goal').toggleClass('hidden');
     $('#header').toggleClass('hidden');
   };
 
@@ -76,13 +78,15 @@ $(document).ready(function() {
   function loadSlides(){
     // The next step is to iterate through an array to find the proper pose name, and then match that with 
     // the hash to retrieve the correlating image url for that array element.
-    for (var i = 0; i < yogaArray.length; i++)
+    for (var i = 0; i < poseArray.length; i++)
     {
-      for(var pose in hash)
+      for(var poseInt = 0; poseInt < imageArray.length; poseInt++)
       {
-        if(yogaArray[i] == pose)
+        var pose = Object.keys(imageArray[poseInt])[0];
+        var poseURL = imageArray[poseInt][pose];
+        if(poseArray[i] == pose)
           {
-            $('#slideshow').append('<img class="nextSlide" src=' + hash[pose]['image'] + '>');
+            $('#slideshow').append('<img class="nextSlide" src=' + poseURL + '>');
           };
       }
     };
@@ -96,8 +100,6 @@ $(document).ready(function() {
 
   function startSlideShow(){  
     loadSlides();
-    // loadSlides();
-    // loadSlides();
     setTimeout(function(){
       $('img').eq(0).addClass('futureSlide');
       $('img').eq(0).removeClass('nextSlide');
