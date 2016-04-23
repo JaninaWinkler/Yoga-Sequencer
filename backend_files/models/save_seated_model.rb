@@ -238,4 +238,8 @@ model =   {
   }
 }
 
+<<<<<<< HEAD
 File.open('4_model.yml', 'w') { |file| file.write(model.to_yaml) }
+=======
+File.open('Seated_model.yml', 'w') { |file| file.write(model.to_yaml) }
+>>>>>>> bc2e93b32a418aaa08ef94ac723beb9d94bda7ac
