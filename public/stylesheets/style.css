@@ -1,6 +1,10 @@
 body {
+<<<<<<< HEAD
   background-image: url('/images/brick.jpeg'); 
   background-image: url('/images/brick_wall_1920.jpg'); 
+=======
+  background-image: url('/images/AdobeStock_74737207.jpeg'); 
+>>>>>>> 7bde582a97ffd78dfd4e407abcb2bd452c9c035d
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
