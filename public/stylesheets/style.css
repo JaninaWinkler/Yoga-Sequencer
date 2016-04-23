@@ -9,6 +9,10 @@ body {
   font-size: 2em;
 }
 
+body.fade-out {
+  display: none;
+}
+
 #header {
   background:#cfa268;
   border:1px solid white;
@@ -126,7 +130,14 @@ label{
   left: 30%;
 }
 
-div#slideshow img.pastSlide{
+#rateYo{
+  left: 40%;
+  position: absolute;
+  top: 55%;
+  z-index: 25;
+}
+
+#slideshow img.pastSlide{
   border-radius: 20px;
   height: 250px;
   left: 5%;
@@ -138,7 +149,7 @@ div#slideshow img.pastSlide{
   z-index: 18;
 }
 
-div#slideshow img.activeSlide{
+#slideshow img.activeSlide{
   border-radius: 20px;
   height: 500px;
   left: 25%;
@@ -150,7 +161,7 @@ div#slideshow img.activeSlide{
   z-index: 20;
 }
 
-div#slideshow img.nextSlide{
+#slideshow img.nextSlide{
   border-radius: 20px;
   height: 250px;
   left: 30%;
@@ -159,10 +170,10 @@ div#slideshow img.nextSlide{
   top: 25%;
   transition: all 2.0s;
   width: 250px;
-  z-index: 18;
+  z-index: 15;
 }
 
-div#slideshow img.futureSlide{
+#slideshow img.futureSlide{
   border-radius: 20px;
   height: 250px;
   left: 70%;
@@ -174,6 +185,11 @@ div#slideshow img.futureSlide{
   visibility: visible;
   z-index: 18;
 }
+
+#slideshow label#rate-sequence{
+
+}
+
 #slideshow#rateYo{
   visibility: none;
 }

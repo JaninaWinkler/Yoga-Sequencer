@@ -13,7 +13,14 @@ post '/generate' do
 end
 
 get '/generate' do
-  # redirect '/'
   @sequence = Sequence.last.sequence_array
+  ## TO DO @sequence.rating = (params[:rating])
   # binding.pry
+end
+
+post '/rating' do
+  @sequence = Sequence.last
+  # binding.pry
+  @sequence.rating = params[:rating]
+  @sequence.save
 end

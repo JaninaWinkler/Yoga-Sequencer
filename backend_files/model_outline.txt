@@ -4,10 +4,18 @@
 * 4_model: Seated Model (3, 6) - BEGIN (Squat) END (Ragdoll)
 * 5_model: Core Model (3, 6) - BEGIN (Squat) END (Ragdoll)
 * 6_model: Backbend Model (4, 7) - BEGIN (Squat) END (Ragdoll)
+<<<<<<< HEAD
+7_model: Stretch Model 
+8_model: Move Model
+9_model: Strength Model
+10_model: Relax Model
+Models to implement: Hips, Twists, Folds, Arm Balances 
+=======
 * 7_model: Stretch Model 
 8_model: Move Model
 9_model: Strength Model
 10_model: Relax Model
+>>>>>>> bc2e93b32a418aaa08ef94ac723beb9d94bda7ac
 
 case TIME
 When 1:

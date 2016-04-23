@@ -2,18 +2,30 @@ $(document).ready(function() {
 
   // $('#rateYo').css('visibility', 'none');
 
+  $(document.body).fadeIn(3000);
   var intervalInc = 0;
   var imageArray = JSON.parse(images);
   var totalImages = $('#slideshow img').siblings('img').size();
 
 
-  $('#post_sequence').submit(function(e){
+  $('#post_sequence ').submit(function(e){
     e.preventDefault();
     $.ajax({
       url: '/generate',
       method: 'post',
       data: $('input').serialize(),
       success: function(){
+      }
+    });
+  });
+
+  $('#rate-sequence-button').on('click', function(){
+    $.ajax({
+      url: '/rating',
+      method: 'post',
+      data: $('#rate-sequence-button')[0].name + "=" + $('#rateYo').rateYo('rating'),
+      success: function(){
+        removeOverlay();
       }
     });
   });
@@ -56,6 +68,8 @@ $(document).ready(function() {
     $('#bgDimmer').removeClass('overlay');
     $('#slideshow').removeClass('modal');
     $('#close-overlay').addClass('hidden');
+    $('#rate-sequence-button').addClass('hidden');
+    $('#slideshow label').addClass('hidden')
     toggleMainPage();
     $('#slideshow img').remove();
     intervalInc = 0;
@@ -107,6 +121,7 @@ $(document).ready(function() {
   }
 
   function startSlideShow(){  
+    var rated = false;
     loadSlides();
     setTimeout(function(){
       window.slideInterval = setInterval(function(){
@@ -125,11 +140,16 @@ $(document).ready(function() {
         if(intervalInc <= totalImages){
           intervalInc++;
         }
-        if($('#slideshow img').siblings('img').last()[0].className.includes('pastSlide') /*&& $('#rateYo').siblings().size() < 2*/){
-          $('#rateYo').rateYo({
-            rating: 0,
-            fullStar: true
-          })
+        if($('#slideshow img').siblings('img').last()[0].className.includes('pastSlide') && rated === false){
+          setTimeout(function(){
+            $('#rate-sequence-button').removeClass('hidden');
+            $('#slideshow label').removeClass('hidden');
+            $('#rateYo').rateYo({
+              rating: 0,
+              fullStar: true
+            })
+            rated = true;
+          }, 3000);
         }
       }, 2000);
     }, 2000);
