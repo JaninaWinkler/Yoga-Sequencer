@@ -4,7 +4,7 @@ require 'json'
 
 class Sequence < ActiveRecord::Base
 
-  OUTLINE_TIME_CONSTRAINTS = [[2, 4], [3, 5], [4, 6]]
+  OUTLINE_TIME_CONSTRAINTS = [[3, 5], [4, 6], [5, 7]]
     # Generates a sequence (Array) of yoga poses as Strings based on input
     def generate(time, start, focus)
       outline = create_outline(time, start, focus)
