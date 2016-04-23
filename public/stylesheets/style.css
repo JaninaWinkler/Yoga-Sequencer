@@ -1,11 +1,15 @@
 body {
+<<<<<<< HEAD
   background-image: url('/images/brick.jpeg'); 
+=======
+  background-image: url('/images/brick_wall_1920.jpg'); 
+>>>>>>> 406ff7c7191e311a6088ab6aa4ede9e97a675f4c
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: auto cover;
-  font-family: Tahoma, sans-serif, serif;
   color: white;
+  font-family: Tahoma, sans-serif, serif;
   font-size: 2em;
 }
 
@@ -14,49 +18,54 @@ body.fade-out {
 }
 
 #header {
-  height: 10%;
   background:#cfa268;
-  opacity: 0.8;
   border:1px solid white;
-  width:40%;
-  margin:0px auto;
-  text-align: center;
   border-radius: 20px;
+  height: 10%;
+  margin:0px auto;
+  opacity: 0.8;
   padding: 0px;
+  width:40%;
+  text-align: center;
 }
 
 #footer {
-  position:fixed;
-  left:0px;
+  background-color: #cfa268;
+  border:1px solid white;
   bottom:0px;
   height:5%;
-  width:100%;
-  background-color: #cfa268;
+  left:0px;
   opacity: 0.5;
-  border:1px solid white;
+  position:fixed;
   text-align: right;
+  width:100%;
 }
 
 #jumbotron {
-  padding-top: 40px;
   height: 100%;
-  width: 80%;
   margin:0px auto;
+  padding-top: 40px;
   text-align: right;
+  width: 80%;
 }
 
 h1 {
+  color: white;
+  font-family: Tahoma, sans-serif, serif;
+  font-size: 1.8em;
   font-weight: bold;
   -webkit-text-stroke: 0.8px black;
-  font-family: Tahoma, sans-serif, serif;
-  color: white;
-  font-size: 1.8em;
+}
+
+label{
+  font-weight: bold;
+  -webkit-text-stroke: 0.8px black;
 }
 
 .select{
   background-color: rgba(207,162,104,0.9);
-  opacity: 0.8;
   border:1px solid white;
+  opacity: 0.8;
   text-align: center;
 }
 
@@ -76,41 +85,36 @@ h1 {
   /*padding-bottom: 50px;*/
 }
 
-label{
-  font-weight: bold;
-  -webkit-text-stroke: 0.8px black;
-}
-
 .question {
+  font-weight: bold;
   margin-top: 20px;
   margin-bottom: 20px;
-  font-weight: bold;
   -webkit-text-stroke: 0.8px black;
 }
 .overlay{
-  transition: all 1.0s;
+  background-color: rgba(0,0,0,0.9);
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
+  transition: all 1.0s;
   width: 100%;
-  height: 100%;
   z-index: 10;
-  background-color: rgba(0,0,0,0.9);
  }
 
 .modal{ /*Visible part of the overlay*/
-  transition: all 2.0s;
-  width: 80%;
-  height: 80%;
-  line-height: 200px;
-  position: absolute;
-  top: 5%; 
-  left: 10%;  
   background-color: rgba(207,162,104,0.3);
   border-radius: 20px;
-  text-align: center;
-  z-index: 11;
+  height: 80%;
+  left: 10%;  
+  line-height: 200px;
   margin: 50px auto;
+  position: absolute;
+  text-align: center;
+  top: 5%; 
+  transition: all 2.0s;
+  width: 80%;
+  z-index: 11;
 }
 
 .hidden{
@@ -118,9 +122,9 @@ label{
 }
 
 #close-overlay{
-  float: left;
-  border-radius: 80%;
   background-color: rgba(0,0,0,0,0.3);
+  border-radius: 80%;
+  float: left;
   font-weight: bold;
   opacity: 0.6;
 }
@@ -130,51 +134,66 @@ label{
   left: 30%;
 }
 
-div#slideshow img.pastSlide{
-  border-radius: 20px;
-  transition: all 2.0s;
+#rateYo{
+  left: 40%;
   position: absolute;
-  top: 25%;
-  height: 250px;
-  width: 250px;
-  left: 5%;
-  z-index: 18;
-  opacity: 0.75;
+  top: 55%;
+  z-index: 25;
 }
 
-div#slideshow img.activeSlide{
+#slideshow img.pastSlide{
   border-radius: 20px;
-  transition: opacity 2.0s ease-in-out, all 2.0s;
+  height: 250px;
+  left: 5%;
+  opacity: 0.75;
+  position: absolute;
+  top: 25%;
+  transition: all 2.0s;
+  width: 250px;
+  z-index: 18;
+}
+
+#slideshow img.activeSlide{
+  border-radius: 20px;
+  height: 500px;
+  left: 25%;
+  opacity: 1.0;
   position: absolute;
   top: 5%;
-  height: 500px;
+  transition: opacity 2.0s ease-in-out, all 2.0s;
   width: 500px;
-  left: 25%;
   z-index: 20;
-  opacity: 1.0;
 }
 
-div#slideshow img.nextSlide{
-  transition: all 2.0s;
+#slideshow img.nextSlide{
   border-radius: 20px;
-  position: absolute;
-  top: 25%;
   height: 250px;
-  width: 250px;
   left: 30%;
-  z-index: 18;
   opacity: 0;
-}
-
-div#slideshow img.futureSlide{
-  visibility: visible;
-  border-radius: 20px;
-  transition: all 2.0s, opacity 2.0s ease-in;
   position: absolute;
   top: 25%;
-  height: 250px;
+  transition: all 2.0s;
   width: 250px;
+  z-index: 15;
+}
+
+#slideshow img.futureSlide{
+  border-radius: 20px;
+  height: 250px;
   left: 70%;
-  z-index: 18;
   opacity: .75;
+  position: absolute;
+  top: 25%;
+  transition: all 2.0s, opacity 2.0s ease-in;
+  width: 250px;
+  visibility: visible;
+  z-index: 18;
+}
+
+#slideshow label#rate-sequence{
+
+}
+
+#slideshow#rateYo{
+  visibility: none;
 }
