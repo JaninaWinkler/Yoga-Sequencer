@@ -1,5 +1,9 @@
 body { 
-  background-image: url('/images/AdobeStock_74737207.jpeg'); 
+  display: none;
+}
+
+body.no-display {
+  background-image: url('/images/AdobeStock_43535318.jpeg'); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -9,12 +13,13 @@ body {
   font-size: 2em;
 }
 
-body.fade-out {
-  display: none;
+body img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
-body img {
-  filter: grayscale(100%);
+#fullpage {
+  background-image: url('images/AdobeStock_43535318.jpeg'); 
 }
 
 /*#header {
@@ -106,6 +111,29 @@ body img {
   z-index: 10;
  }*/
 
+ .section#section1 {
+  background-image: url('images/AdobeStock_43535318.jpeg'); 
+ }
+
+ .slide#time-slide {
+  background-image: url('images/AdobeStock_43535318.jpeg'); 
+ }
+
+  .slide#start-slide {
+  background-color: gray;
+
+  }
+
+  .slide#goal-slide {
+  background-color: gray;
+
+  }
+
+  .section {
+    font-size: 2em;
+    text-align: center;
+  }
+
 .modal{ /*Visible part of the overlay*/
   background-color: rgba(128,128,128,0.3);
   border-radius: 20px;
@@ -155,6 +183,7 @@ body img {
   transition: all 2.0s;
   width: 250px;
   z-index: 18;
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
@@ -168,6 +197,7 @@ body img {
   transition: opacity 2.0s ease-in-out, all 2.0s;
   width: 500px;
   z-index: 20;
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
@@ -181,6 +211,7 @@ body img {
   transition: all 2.0s;
   width: 250px;
   z-index: 15;
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
@@ -194,6 +225,7 @@ body img {
   transition: all 2.0s, opacity 2.0s ease-in;
   width: 250px;
   visibility: visible;
+  -webkit-filter: grayscale(100%);
   z-index: 18;
 }
 

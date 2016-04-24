@@ -2,7 +2,7 @@ $(document).ready(function() {
   var intervalInc = 0;
   var imageArray = JSON.parse(images);
 
-  $(document.body).fadeIn(5000);
+  $(document.body).fadeIn(6000);
 
   $('#post_sequence ').submit(function(e){
     e.preventDefault();

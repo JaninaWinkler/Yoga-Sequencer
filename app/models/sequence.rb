@@ -58,7 +58,7 @@ class Sequence < ActiveRecord::Base
       max = 11
     elsif type == 'Transition'
       min = 6
-      max = 8
+      max = 10
     elsif type == 'Seated'
       min = 8
       max = 10
