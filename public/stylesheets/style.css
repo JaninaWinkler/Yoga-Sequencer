@@ -24,22 +24,6 @@ h1 {
   background-color: rgba(255,255,255,0.1);
 }
   
-/*
-.section {
-  background-color: rgba(255,255,255,0.1);
-}*/
-
-/*#header {
-  background-color: rgba(248, 248, 255, 0.6);
-  border:1px solid black;
-  border-radius: 20px;
-  height: 10%;
-  margin:0px auto;
-  padding: 0px;
-  width:40%;
-  text-align: center;
-}
-*/
 #footer {
   background-color: #cfa268;
   border:1px solid white;
@@ -52,60 +36,6 @@ h1 {
   width:100%;
 }
 
-/*#jumbotron {
-  height: 100%;
-  margin:0px auto;
-  padding-top: 40px;
-  text-align: right;
-  width: 80%;
-}*/
-
-/*h1 {
-  color: white;
-  font-family: Tahoma, sans-serif, serif;
-  font-size: 1.8em;
-  font-weight: bold;
-  -webkit-text-stroke: 0.8px black;
-}
-label{
-  font-weight: bold;
-  -webkit-text-stroke: 0.8px black;
-}
-
-.section {
-    font-size: 6em;
-    text-align: center;
-  }
-
-.select{
-  background-color: rgba(248, 248, 255, 0.6);
-  border:1px solid white;
-  opacity: 0.8;
-  text-align: center;
-}
-
-.time {
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  padding-bottom: 15px;
-}
-
-.start {
-  padding-bottom: 15px;
-}
-
-.goal {
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  padding-bottom: 50px;
-}
-
-.question {
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  -webkit-text-stroke: 0.8px black;
-}*/
 .overlay{
   background-color: rgba(0,0,0,0.9);
   height: 100%;
@@ -116,15 +46,6 @@ label{
   width: 100%;
   z-index: 10;
  }
-
-/* .section#section1 {
-  background-image: url('images/AdobeStock_43535318.jpeg'); 
- }
-
- .slide#time-slide {
-  background-image: url('images/AdobeStock_43535318.jpeg'); 
- }*/
-
 
 .section {
     font-size: 2em;
@@ -229,4 +150,8 @@ label{
 
 #slideshow#rateYo{
   visibility: none;
+}
+
+#random-rated-sequence{
+  background: rgba(0, 0, 0, 0);
 }
