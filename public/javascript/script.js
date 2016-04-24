@@ -15,7 +15,6 @@ $(document).ready(function() {
     });
   });
 
-
   // ######### Hash an array for testing loadimages function for slideshow ########
   // var yogaArray = ['Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
   //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
