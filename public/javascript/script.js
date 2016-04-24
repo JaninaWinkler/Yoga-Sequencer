@@ -1,12 +1,8 @@
 $(document).ready(function() {
-
-  // $('#rateYo').css('visibility', 'none');
-
-  $(document.body).fadeIn(3000);
   var intervalInc = 0;
   var imageArray = JSON.parse(images);
-  var totalImages = $('#slideshow img').siblings('img').size();
 
+  $(document.body).fadeIn(5000);
 
   $('#post_sequence ').submit(function(e){
     e.preventDefault();
@@ -19,16 +15,18 @@ $(document).ready(function() {
     });
   });
 
-  $('#rate-sequence-button').on('click', function(){
-    $.ajax({
-      url: '/rating',
-      method: 'post',
-      data: $('#rate-sequence-button')[0].name + "=" + $('#rateYo').rateYo('rating'),
-      success: function(){
-        removeOverlay();
-      }
-    });
-  });
+
+  // ######### Hash an array for testing loadimages function for slideshow ########
+  // var yogaArray = ['Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
+  //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
+  //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
+  //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',]
+  // var hash = {
+  //   Warrior1: {image: '/images/beach-yoga.jpg'},
+  //   Warrior2: {image: '/images/Creative-yoga-and-sunset-vector-03.jpg'},
+  //   Warrior3: {image: '/images/yoga-tree.jpg'},
+  //   Triangle: {image: '/images/yoga.jpg'}
+  // };
 
   $('input.checkbox').on('change', function() {
     $('input.checkbox').not(this).prop('checked', false);  
@@ -68,12 +66,9 @@ $(document).ready(function() {
     $('#bgDimmer').removeClass('overlay');
     $('#slideshow').removeClass('modal');
     $('#close-overlay').addClass('hidden');
-    $('#rate-sequence-button').addClass('hidden');
-    $('#slideshow label').addClass('hidden')
     toggleMainPage();
     $('#slideshow img').remove();
     intervalInc = 0;
-    $('#rateYo').rateYo('destroy');
   };
 
   function activateOverlay(){
@@ -82,7 +77,7 @@ $(document).ready(function() {
     $('#bgDimmer').addClass('overlay');
     setTimeout(function(){
       $('#slideshow').addClass('modal');
-      $('#close-overlay').removeClass('hidden');
+      $('#close-overlay').removeClass('hidden')
       toggleMainPage();
     }, 200);
   };
@@ -96,6 +91,8 @@ $(document).ready(function() {
       $.ajax({
         url: '/generate',
         method: 'get',
+        error: function(){
+        },
         success: function(data){
           var poseArray = JSON.parse(data);
           for (var i = 0; i < poseArray.length; i++){
@@ -107,11 +104,24 @@ $(document).ready(function() {
               }
             }
           }
-              $('img').eq(0).addClass('futureSlide');
-          $('img').eq(0).removeClass('nextSlide');
         }
       });
     }, 1000);
+
+    // The next step is to iterate through an array to find the proper pose name, and then match that with 
+    // the hash to retrieve the correlating image url for that array element.
+    // for (var i = 0; i < poseArray.length; i++)
+    // {
+    //   for(var poseInt = 0; poseInt < imageArray.length; poseInt++)
+    //   {
+    //     var pose = Object.keys(imageArray[poseInt])[0];
+    //     var poseURL = imageArray[poseInt][pose];
+    //     if(poseArray[i] == pose)
+    //       {
+    //         $('#slideshow').append('<img class="nextSlide" src=' + poseURL + '>');
+    //       };
+    //   }
+    // };
   };
 
   function removeLastSlide(){
@@ -121,38 +131,32 @@ $(document).ready(function() {
   }
 
   function startSlideShow(){  
-    var rated = false;
     loadSlides();
     setTimeout(function(){
+      $('img').eq(0).addClass('futureSlide');
+      $('img').eq(0).removeClass('nextSlide');
       window.slideInterval = setInterval(function(){
-        totalImages = $('#slideshow img').siblings('img').size();
-        if(intervalInc > 0){
+        var totalImages = $('#slideshow img').siblings('img').size();
+        if(intervalInc > 0)
+        {
           $('img').eq(intervalInc - 1).addClass('pastSlide');
           $('img').eq(intervalInc - 1).removeClass('activeSlide');
         }
-        if(intervalInc == totalImages || intervalInc > 1){
+        if(intervalInc == totalImages || intervalInc > 1)
+        {
           $('img').eq(intervalInc - 2).addClass('nextSlide');
         }
         $('img').eq(intervalInc).addClass('activeSlide');
         $('img').eq(intervalInc).removeClass('futureSlide');
         $('img').eq(intervalInc + 1).addClass('futureSlide');
         $('img').eq(intervalInc + 1).removeClass('nextSlide');
-        if(intervalInc <= totalImages){
+        if(intervalInc <= totalImages)
+        {
           intervalInc++;
         }
-        if($('#slideshow img').siblings('img').last()[0].className.includes('pastSlide') && rated === false){
-          setTimeout(function(){
-            $('#rate-sequence-button').removeClass('hidden');
-            $('#slideshow label').removeClass('hidden');
-            $('#rateYo').rateYo({
-              rating: 0,
-              fullStar: true
-            })
-            rated = true;
-          }, 3000);
-        }
       }, 2000);
-    }, 2000);
+    }, 1000);
   };
+
 });
 

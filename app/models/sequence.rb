@@ -54,25 +54,25 @@ class Sequence < ActiveRecord::Base
   def create_subsequence(type)
     sequence_model = load_model(type)
     if type == 'Standing'
-      min = 7
-      max= 10
+      min = 8
+      max = 11
     elsif type == 'Transition'
-      min = 5
-      max= 7
+      min = 6
+      max = 8
     elsif type == 'Seated'
-      min = 7
-      max= 9
+      min = 8
+      max = 10
     elsif type == 'Core'
-      min = 4
-      max= 7
+      min = 5
+      max = 8
     elsif type == 'Backbend'
-      min = 4
-      max= 5
+      min = 5
+      max = 7
     elsif type == 'Hips'
-      min = 4
-      max= 7
+      min = 6
+      max = 8
     elsif type == 'Savasana'
-      min =1
+      min = 1
       max = 1
     end
     sequence = []
