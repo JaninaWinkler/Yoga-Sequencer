@@ -1,10 +1,9 @@
 $(document).ready(function() {
 
   $(document.body).fadeIn(3000);
+
   var intervalInc = 0;
   var imageArray = JSON.parse(images);
-  var totalImages = $('#slideshow img').siblings('img').size();
-
 
   $('#post_sequence ').submit(function(e){
     e.preventDefault();
@@ -13,17 +12,6 @@ $(document).ready(function() {
       method: 'post',
       data: $('input').serialize(),
       success: function(){
-      }
-    });
-  });
-
-  $('#rate-sequence-button').on('click', function(){
-    $.ajax({
-      url: '/rating',
-      method: 'post',
-      data: $('#rate-sequence-button')[0].name + "=" + $('#rateYo').rateYo('rating'),
-      success: function(){
-        removeOverlay();
       }
     });
   });
@@ -81,12 +69,9 @@ $(document).ready(function() {
     $('#bgDimmer').removeClass('overlay');
     $('#slideshow').removeClass('modal');
     $('#close-overlay').addClass('hidden');
-    $('#rate-sequence-button').addClass('hidden');
-    $('#slideshow label').addClass('hidden')
     toggleMainPage();
     $('#slideshow img').remove();
     intervalInc = 0;
-    $('#rateYo').rateYo('destroy');
   };
 
   function activateOverlay(){
@@ -95,7 +80,7 @@ $(document).ready(function() {
     $('#bgDimmer').addClass('overlay');
     setTimeout(function(){
       $('#slideshow').addClass('modal');
-      $('#close-overlay').removeClass('hidden');
+      $('#close-overlay').removeClass('hidden')
       toggleMainPage();
     }, 200);
   };
@@ -109,6 +94,8 @@ $(document).ready(function() {
       $.ajax({
         url: '/generate',
         method: 'get',
+        error: function(){
+        },
         success: function(data){
           var poseArray = JSON.parse(data);
           for (var i = 0; i < poseArray.length; i++){

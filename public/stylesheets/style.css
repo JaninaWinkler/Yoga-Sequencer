@@ -1,30 +1,38 @@
-body {
-  background-image: url('/images/AdobeStock_74737207.jpeg'); 
+body { 
+  display: none;
+}
+
+body.no-display {
+  background-image: url('/images/AdobeStock_43535318.jpeg'); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: auto cover;
-  color: white;
+  color: gray;
   font-family: Tahoma, sans-serif, serif;
   font-size: 2em;
 }
 
-body.fade-out {
-  display: none;
+body img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
-#header {
-  background:#cfa268;
-  border:1px solid white;
+#fullpage {
+  background-image: url('images/AdobeStock_43535318.jpeg'); 
+}
+
+/*#header {
+  background-color: rgba(248, 248, 255, 0.6);
+  border:1px solid black;
   border-radius: 20px;
   height: 10%;
   margin:0px auto;
-  opacity: 0.8;
   padding: 0px;
   width:40%;
   text-align: center;
 }
-
+*/
 #footer {
   background-color: #cfa268;
   border:1px solid white;
@@ -37,29 +45,33 @@ body.fade-out {
   width:100%;
 }
 
-#jumbotron {
+/*#jumbotron {
   height: 100%;
   margin:0px auto;
   padding-top: 40px;
   text-align: right;
   width: 80%;
-}
+}*/
 
-h1 {
+/*h1 {
   color: white;
   font-family: Tahoma, sans-serif, serif;
   font-size: 1.8em;
   font-weight: bold;
   -webkit-text-stroke: 0.8px black;
 }
-
 label{
   font-weight: bold;
   -webkit-text-stroke: 0.8px black;
 }
 
+.section {
+    font-size: 6em;
+    text-align: center;
+  }
+
 .select{
-  background-color: rgba(207,162,104,0.9);
+  background-color: rgba(248, 248, 255, 0.6);
   border:1px solid white;
   opacity: 0.8;
   text-align: center;
@@ -78,7 +90,7 @@ label{
 .goal {
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  /*padding-bottom: 50px;*/
+  padding-bottom: 50px;
 }
 
 .question {
@@ -86,7 +98,7 @@ label{
   margin-top: 20px;
   margin-bottom: 20px;
   -webkit-text-stroke: 0.8px black;
-}
+}*/
 .overlay{
   background-color: rgba(0,0,0,0.9);
   height: 100%;
@@ -98,8 +110,31 @@ label{
   z-index: 10;
  }
 
+ .section#section1 {
+  background-image: url('images/AdobeStock_43535318.jpeg'); 
+ }
+
+ .slide#time-slide {
+  background-image: url('images/AdobeStock_43535318.jpeg'); 
+ }
+
+  .slide#start-slide {
+  background-color: gray;
+
+  }
+
+  .slide#goal-slide {
+  background-color: gray;
+
+  }
+
+  .section {
+    font-size: 2em;
+    text-align: center;
+  }
+
 .modal{ /*Visible part of the overlay*/
-  background-color: rgba(207,162,104,0.3);
+  background-color: rgba(128,128,128,0.3);
   border-radius: 20px;
   height: 80%;
   left: 5%;  
@@ -146,6 +181,8 @@ label{
   transform: scale(0.3);
   transition: all 1.0s;
   z-index: 18;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 #slideshow img.activeSlide{
@@ -157,6 +194,8 @@ label{
   transform: scale(0.85);
   transition: opacity 2.0s ease-in-out, all 1.0s;
   z-index: 20;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 #slideshow img.nextSlide{
@@ -168,6 +207,8 @@ label{
   transform: scale(0.25);
   transition: all 1.0s;
   z-index: 15;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 #slideshow img.futureSlide{
@@ -179,6 +220,7 @@ label{
   transform: scale(0.3);
   transition: all 1.0s, opacity 1.0s ease-in;
   visibility: visible;
+  -webkit-filter: grayscale(100%);
   z-index: 18;
 }
 
