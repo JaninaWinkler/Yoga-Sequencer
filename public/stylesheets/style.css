@@ -102,14 +102,14 @@ label{
   background-color: rgba(207,162,104,0.3);
   border-radius: 20px;
   height: 80%;
-  left: 10%;  
+  left: 5%;  
   line-height: 200px;
   margin: 50px auto;
   position: absolute;
   text-align: center;
   top: 5%; 
   transition: all 2.0s;
-  width: 80%;
+  width: 90%;
   z-index: 11;
 }
 
@@ -139,55 +139,52 @@ label{
 
 #slideshow img.pastSlide{
   border-radius: 20px;
-  height: 250px;
-  left: 5%;
+  left: -22%;
   opacity: 0.75;
   position: absolute;
-  top: 25%;
-  transition: all 2.0s;
-  width: 250px;
+  top: 3%;
+  transform: scale(0.3);
+  transition: all 1.0s;
   z-index: 18;
 }
 
 #slideshow img.activeSlide{
   border-radius: 20px;
-  height: 500px;
-  left: 25%;
+  left: 15.5%;
   opacity: 1.0;
   position: absolute;
-  top: 5%;
-  transition: opacity 2.0s ease-in-out, all 2.0s;
-  width: 500px;
+  top: 2%;
+  transform: scale(0.85);
+  transition: opacity 2.0s ease-in-out, all 1.0s;
   z-index: 20;
 }
 
 #slideshow img.nextSlide{
   border-radius: 20px;
-  height: 250px;
-  left: 30%;
+  left: 15%;
   opacity: 0;
   position: absolute;
-  top: 25%;
-  transition: all 2.0s;
-  width: 250px;
+  top: 5%;
+  transform: scale(0.25);
+  transition: all 1.0s;
   z-index: 15;
 }
 
 #slideshow img.futureSlide{
   border-radius: 20px;
-  height: 250px;
-  left: 70%;
+  left: 53.5%;
   opacity: .75;
   position: absolute;
-  top: 25%;
-  transition: all 2.0s, opacity 2.0s ease-in;
-  width: 250px;
+  top: 3%;
+  transform: scale(0.3);
+  transition: all 1.0s, opacity 1.0s ease-in;
   visibility: visible;
   z-index: 18;
 }
 
-#slideshow label#rate-sequence{
-
+#slideshow img.pastSlide, #slideshow img.futureSlide,
+#slideshow img.activeSlide, #slideshow img.nextSlide{
+ -webkit-filter: grayscale(100%);
 }
 
 #slideshow#rateYo{

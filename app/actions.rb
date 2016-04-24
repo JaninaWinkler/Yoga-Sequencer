@@ -24,3 +24,9 @@ post '/rating' do
   @sequence.rating = params[:rating]
   @sequence.save
 end
+
+get '/rating' do
+  binding.pry
+  @sequence = Sequence.where(rating: 4..5).order(rating: :desc)
+  @sequence
+end
