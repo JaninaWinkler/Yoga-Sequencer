@@ -2,25 +2,32 @@ body {
   display: none;
 }
 
-body.no-display {
+body.display {
   background-image: url('/images/AdobeStock_43535318.jpeg'); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: auto cover;
-  color: gray;
+  color: black;
   font-family: Tahoma, sans-serif, serif;
-  font-size: 2em;
+  font-size: 2.2em;
+  font-weight: bold;
 }
 
-body img {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+h1 {
+  text-align: left;
+  padding-left: 170px;
 }
+
 
 #fullpage {
-  background-image: url('images/AdobeStock_43535318.jpeg'); 
+  background-color: rgba(255,255,255,0.1);
 }
+  
+/*
+.section {
+  background-color: rgba(255,255,255,0.1);
+}*/
 
 /*#header {
   background-color: rgba(248, 248, 255, 0.6);
@@ -110,31 +117,22 @@ label{
   z-index: 10;
  }
 
- .section#section1 {
+/* .section#section1 {
   background-image: url('images/AdobeStock_43535318.jpeg'); 
  }
 
  .slide#time-slide {
   background-image: url('images/AdobeStock_43535318.jpeg'); 
- }
+ }*/
 
-  .slide#start-slide {
-  background-color: gray;
 
-  }
-
-  .slide#goal-slide {
-  background-color: gray;
-
-  }
-
-  .section {
+.section {
     font-size: 2em;
     text-align: center;
   }
 
-.modal{ /*Visible part of the overlay*/
-  background-color: rgba(128,128,128,0.3);
+.modal{ 
+  background-color: rgba(255,255,255,0.1);
   border-radius: 20px;
   height: 80%;
   left: 5%;  
