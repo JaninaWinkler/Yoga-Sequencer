@@ -119,8 +119,6 @@ $(document).ready(function() {
       $.ajax({
         url: '/generate',
         method: 'get',
-        error: function(){
-        },
         success: function(data){
           var poseArray = JSON.parse(data);
           for (var i = 0; i < poseArray.length; i++){
@@ -129,6 +127,7 @@ $(document).ready(function() {
               var poseURL = imageArray[poseInt][pose];
               if(poseArray[i] == pose){
                   $('#slideshow').append('<img class="nextSlide" src=' + poseURL + '>');
+                  // $('#slideshow').append('<label class="hidden">' + pose + '</label>');
               }
             }
           }
