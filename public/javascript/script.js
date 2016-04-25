@@ -14,7 +14,7 @@ $(document).ready(function() {
       }
     });
   });
-  
+
 $('.arrowUp').click(function(){
     $.fn.fullpage.moveSectionUp();
 });
@@ -63,7 +63,6 @@ $('.arrowDown').click(function(){
     $('.select time').toggleClass('hidden');
     $('.select energy').toggleClass('hidden');
     $('.select goal').toggleClass('hidden');
-    $('#header').toggleClass('hidden');
   };
 
   function removeOverlay(){
