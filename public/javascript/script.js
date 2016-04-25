@@ -26,6 +26,14 @@ $(document).ready(function() {
     });
   });
 
+$('.arrowUp').click(function(){
+    $.fn.fullpage.moveSectionUp();
+});
+
+$('.arrowDown').click(function(){
+    $.fn.fullpage.moveSectionDown();
+});
+
   $('input.checkbox').on('change', function() {
     $('input.checkbox').not(this).prop('checked', false);  
   });
@@ -55,7 +63,6 @@ $(document).ready(function() {
     $('.select time').toggleClass('hidden');
     $('.select energy').toggleClass('hidden');
     $('.select goal').toggleClass('hidden');
-    $('#header').toggleClass('hidden');
   };
 
   function removeOverlay(){

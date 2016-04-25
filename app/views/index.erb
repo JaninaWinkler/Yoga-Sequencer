@@ -9,15 +9,12 @@
   </div>
 
   <div class="section">
-<!-- <<<<<<< HEAD
-    <p>It's as simple as 1, 2, 3, 4!</p>
-    <button id="random-rated-sequence" class="">No Time to Think<br>Just Yoga Now!</button>
-======= -->
     <p>Your personal yoga sequence <br> in four steps.</p>
   </div>
   <div class="section">
     <div class="slide">Unless you don't have time <br> for four steps.</div>
-    <div class="slide"><button id="top-rated-button">You can get a top-rated <br> sequence immediately.</button><p>Or get one customized <br> just for you.</div>
+    <div class="slide"><button id="top-rated-button">You can get a top-rated <br> sequence immediately.</button></div>
+    <div class="slide"><p>Or get one customized <br> just for you.</div>
   </div>
 
   <div class="section">
@@ -26,7 +23,7 @@
         <div class="select time">
           <p class="question">1. Select Time.</p>
           <input id="userTime" type="range" min="1" max="3" step="1" onchange="userTimeTextbox.value = userTime.value" name="time" />
-          <input id="userTimeTextbox" type="text" value="A fair amount."/>
+          <br><input id="userTimeTextbox" type="text" value="A fair amount."/>
           <br>
         </div>
       </div>
@@ -34,7 +31,7 @@
         <div class="select start">
           <p class="question">2. Select Starting Position.</p>
           <input id="userStart" type="range" min="1" max="2" step="1" onchange="userStartTextbox.value = userStart.value" />
-          <input id="userStartTextbox" type="text" name="start" value="Standing"/>
+          <br><input id="userStartTextbox" type="text" name="start" value="Standing"/>
           <br>
         </div>
       </div>
@@ -51,4 +48,6 @@
       <p class="question">4. Create Sequence.</p><button id="overlay-button" value="">YogaMe!</button>
     </div>
     </form>
-  </div>
+</div>
+<div class="arrowUp"></div>
+<div class="arrowDown"></div>
