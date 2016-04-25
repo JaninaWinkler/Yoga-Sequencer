@@ -119,6 +119,17 @@ h1 {
   border: 10px solid white;
   }
 
+#userTimeTextbox, #userStartTextbox {
+    border: 3px solid #064E75; 
+    border-radius: 10px; 
+    outline:0; 
+    height:20px; 
+    width: 100px; 
+    padding: 10px 12px;  
+    text-align: center;
+    font-size: 15px;
+  } 
+
 .arrowUp, 
 .arrowDown{
     position:fixed;
