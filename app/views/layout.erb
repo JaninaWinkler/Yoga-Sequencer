@@ -19,6 +19,13 @@
   $(document).ready(function() {
     $('#fullpage').fullpage({
       // sectionsColor: ['#f2f2f2', '#5EA1B4', '#034568', '#034568', '#034568'],
+      navigation: true,
+      afterRender: function automaticScroll() {
+        setInterval(function(){
+          $('#fullpage').fullpage.moveSectionDown();
+        }, 4000);
+        // clearInterval(automaticScroll);
+      }
     });
   });
   </script>
