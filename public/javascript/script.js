@@ -72,13 +72,13 @@ function hideArrowDown(anchorlink) {
   
   $('#userTime').on('change', function() {
     if ($('#userTime').val() == "1") {
-      $('#userTimeTextbox').val('A bit..');
+      $('#userTimeTextbox').val('A bit');
     }
     else if ($('#userTime').val() == "3") {
-      $('#userTimeTextbox').val('Tons!');
+      $('#userTimeTextbox').val('Tons');
     }
     else {
-      $('#userTimeTextbox').val('A fair amount.');
+      $('#userTimeTextbox').val('A fair amount');
     }
   });
   function toggleMainPage(){
