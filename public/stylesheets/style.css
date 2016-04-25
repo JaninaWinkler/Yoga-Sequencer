@@ -22,22 +22,22 @@ h1 {
 
 label.focus-label {
   background-color:rgba(0,0,0,0.0);  
-  padding: 20px;
+  padding: 18px;
   border-radius: 10px;
-  border: 4px solid #064E75;
+  border: 5px solid #064E75;
   font-weight: bold;
-  font-size: 34px;
+  font-size: 30px;
 }
 
 label.focus-label:hover {
-  border: 4px solid white;
+  border: 5px solid white;
 }
 label.focus-label:active {
-  border: 4px solid white;
+  border: 5px solid white;
 }
 
 label.clicked {
-  border: 4px solid white;
+  border: 5px solid white;
 }
 
 #fullpage {
@@ -133,7 +133,7 @@ label.clicked {
 #userTimeTextbox, #userStartTextbox {
   background-color:rgba(0,0,0,0.0);  
   border: 5px solid #064E75; 
-  border-radius: 12px; 
+  border-radius: 10px; 
   outline:0; 
   height:30px; 
   width: 130px; 
