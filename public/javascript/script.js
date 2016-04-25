@@ -34,10 +34,33 @@ $('.arrowDown').click(function(){
     $.fn.fullpage.moveSectionDown();
 });
 
+function hideArrowUp() {
+  if(index == 1){
+    $('.arrowUp').hide();
+   }
+  else {
+    $('.arrowUp').show();
+  }
+}
+
+function hideArrowDown(anchorlink) {
+  if(index == 3){
+    $('.arrowDown').hide();
+  }
+  else {
+    $('.arrowDown').show();
+  }
+}
+
   $('input.checkbox').on('change', function() {
     $('input.checkbox').not(this).prop('checked', false);  
   });
   
+  $('label.focus-label').on('change', function() {
+    $(this).addClass('clicked');  
+    $('label.focus-label').not(this).removeClass('clicked');  
+  });
+
   $('#userStart').on('change', function() {
     if ($('#userStart').val() == "1") {
       $('#userStartTextbox').val('Seated');
@@ -49,13 +72,13 @@ $('.arrowDown').click(function(){
   
   $('#userTime').on('change', function() {
     if ($('#userTime').val() == "1") {
-      $('#userTimeTextbox').val('A bit..');
+      $('#userTimeTextbox').val('A bit');
     }
     else if ($('#userTime').val() == "3") {
-      $('#userTimeTextbox').val('Tons!');
+      $('#userTimeTextbox').val('Tons');
     }
     else {
-      $('#userTimeTextbox').val('A fair amount.');
+      $('#userTimeTextbox').val('A fair amount');
     }
   });
   function toggleMainPage(){

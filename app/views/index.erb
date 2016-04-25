@@ -29,7 +29,7 @@
         <div class="select time">
           <p class="question">1. Select Time.</p>
           <input id="userTime" type="range" min="1" max="3" step="1" onchange="userTimeTextbox.value = userTime.value" name="time" />
-          <br><input id="userTimeTextbox" type="text" value="A fair amount."/>
+          <br><input id="userTimeTextbox" type="text" readonly="readonly" value="A fair amount"/>
           <br>
         </div>
       </div>
@@ -37,17 +37,17 @@
         <div class="select start">
           <p class="question">2. Select Starting Position.</p>
           <input id="userStart" type="range" min="1" max="2" step="1" onchange="userStartTextbox.value = userStart.value" />
-          <br><input id="userStartTextbox" type="text" name="start" value="Standing"/>
+          <br><input id="userStartTextbox" type="text" readonly="readonly" name="start" value="Standing"/>
           <br>
         </div>
       </div>
       <div class="slide" id="goal-slide"> 
         <div class="select goal">         
           <p class="question">3. Select Goal.</p>
-          <input type="checkbox" class="checkbox" id="userInputStretch" name="focus" value="Stretch" checked="true"><label>Stretch</label>
-          <input type="checkbox" class="checkbox" id="userInputMove" name="focus" value="Move"><label>Move</label>
-          <input type="checkbox" class="checkbox" id="userInputStrength" name="focus" value="Strength"><label>Strength</label>
-          <input type="checkbox" class="checkbox" id="userInputRelax" name="focus" value="Relax"><label>Relax</label>
+          <label class="focus-label clicked"><input type="checkbox" class="hidden" id="userInputStretch" name="focus" value="Stretch" checked="true">Stretch</label>
+          <label class="focus-label"><input type="checkbox" class="hidden" id="userInputMove" name="focus" value="Move">Move</label>
+          <label class="focus-label"><input type="checkbox" class="hidden" id="userInputStrength" name="focus" value="Strength">Strength</label>
+          <label class="focus-label"><input type="checkbox" class="hidden" id="userInputRelax" name="focus" value="Relax">Relax</label>
       </div>
     </div>
     <div class="slide">
