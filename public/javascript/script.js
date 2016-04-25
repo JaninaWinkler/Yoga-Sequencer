@@ -14,7 +14,14 @@ $(document).ready(function() {
       }
     });
   });
+  
+$('.arrowUp').click(function(){
+    $.fn.fullpage.moveSectionUp();
+});
 
+$('.arrowDown').click(function(){
+    $.fn.fullpage.moveSectionDown();
+});
   // ######### Hash an array for testing loadimages function for slideshow ########
   // var yogaArray = ['Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
   //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
