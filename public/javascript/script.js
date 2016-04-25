@@ -22,6 +22,24 @@ $('.arrowUp').click(function(){
 $('.arrowDown').click(function(){
     $.fn.fullpage.moveSectionDown();
 });
+
+function hideArrowUp() {
+  if(index == 1){
+    $('.arrowUp').hide();
+   }
+  else {
+    $('.arrowUp').show();
+  }
+}
+
+function hideArrowDown(anchorlink) {
+  if(index == 3){
+    $('.arrowDown').hide();
+  }
+  else {
+    $('.arrowDown').show();
+  }
+}
   // ######### Hash an array for testing loadimages function for slideshow ########
   // var yogaArray = ['Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
   //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
@@ -38,6 +56,11 @@ $('.arrowDown').click(function(){
     $('input.checkbox').not(this).prop('checked', false);  
   });
   
+  $('label.focus-label').on('change', function() {
+    $(this).addClass('clicked');  
+    $('label.focus-label').not(this).removeClass('clicked');  
+  });
+
   $('#userStart').on('change', function() {
     if ($('#userStart').val() == "1") {
       $('#userStartTextbox').val('Seated');

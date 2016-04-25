@@ -20,6 +20,26 @@ h1 {
   padding-left: 170px;
 }
 
+label.focus-label {
+  background-color:rgba(0,0,0,0.0);  
+  padding: 20px;
+  border-radius: 10px;
+  border: 4px solid #064E75;
+  font-weight: bold;
+  font-size: 34px;
+}
+
+label.focus-label:hover {
+  border: 4px solid white;
+}
+label.focus-label:active {
+  border: 4px solid white;
+}
+
+label.clicked {
+  border: 4px solid white;
+}
+
 #fullpage {
   background-color: rgba(255,255,255,0.0);
 }
@@ -27,7 +47,7 @@ h1 {
 .section {
   font-size: 2em;
   text-align: center;
-  }
+}
 
 
 .question {
@@ -47,7 +67,7 @@ h1 {
   transition: all 1.0s;
   width: 100%;
   z-index: 10;
- }
+}
 
 .modal{ 
   background-color: rgba(255,255,255,0.1);
@@ -83,11 +103,15 @@ h1 {
   border: 4px solid #064E75;
   font-weight: bold;
   font-size: 34px;
- }
+}
 
 #overlay-button:hover {
   border: 4px solid white;
-  }
+}
+
+#overlay-button:active {
+  border: 4px solid white;
+}
 
 #top-rated-button {
   background-color:rgba(0,0,0,0.0);  
@@ -96,47 +120,47 @@ h1 {
   border: 10px solid #064E75;
   font-weight: bold;
   font-size: 70px;
- }
+}
 
 #top-rated-button:hover {
   border: 10px solid white;
-  }
+}
 
 #top-rated-button:active {
   border: 10px solid white;
-  }
+}
 
 #userTimeTextbox, #userStartTextbox {
-    border: 3px solid #064E75; 
-    border-radius: 10px; 
-    outline:0; 
-    height:20px; 
-    width: 100px; 
-    padding: 10px 12px;  
-    text-align: center;
-    font-size: 15px;
-  } 
+  border: 3px solid #064E75; 
+  border-radius: 10px; 
+  outline:0; 
+  height:20px; 
+  width: 100px; 
+  padding: 10px 12px;  
+  text-align: center;
+  font-size: 15px;
+} 
 
 .arrowUp, 
 .arrowDown{
-    position:fixed;
-    z-index:99;
-    cursor: pointer;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    margin-left: -38px;
-    left: 50%;
+  position:fixed;
+  z-index:99;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-left: -38px;
+  left: 50%;
 }
 .arrowDown{
-    bottom: 20px;
-    border-width: 38.5px 34px 0 38.5px;
-    border-color: #fff transparent transparent transparent;
+  bottom: 20px;
+  border-width: 38.5px 34px 0 38.5px;
+  border-color: #fff transparent transparent transparent;
 }
 .arrowUp{
-    top: 20px;
-    border-width: 0 38.5px 34px 38.5px;
-    border-color: transparent transparent #fff transparent;
+  top: 20px;
+  border-width: 0 38.5px 34px 38.5px;
+  border-color: transparent transparent #fff transparent;
 }
 
 input[type=range] {
@@ -225,8 +249,6 @@ input[type=range]:focus::-ms-fill-upper {
   background: #314767;
 }
 
-
-
 #rateYo{
   left: 40%;
   position: absolute;
@@ -244,8 +266,8 @@ input[type=range]:focus::-ms-fill-upper {
   transition: all 2.0s;
   width: 250px;
   z-index: 18;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(80%);
+  filter: grayscale(80%);
 }
 
 #slideshow img.activeSlide{
@@ -258,8 +280,8 @@ input[type=range]:focus::-ms-fill-upper {
   transition: opacity 2.0s ease-in-out, all 2.0s;
   width: 500px;
   z-index: 20;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(80%);
+  filter: grayscale(80%);
 }
 
 #slideshow img.nextSlide{
@@ -272,8 +294,8 @@ input[type=range]:focus::-ms-fill-upper {
   transition: all 2.0s;
   width: 250px;
   z-index: 15;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(80%);
+  filter: grayscale(80%);
 }
 
 #slideshow img.futureSlide{
@@ -286,7 +308,7 @@ input[type=range]:focus::-ms-fill-upper {
   transition: all 2.0s, opacity 2.0s ease-in;
   width: 250px;
   visibility: visible;
-  -webkit-filter: grayscale(100%);
+  -webkit-filter: grayscale(80%);
   z-index: 18;
 }
 
