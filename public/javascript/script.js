@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  var intervalInc = 0;
-  var imageArray = JSON.parse(images);
 
-  $(document.body).fadeIn(6000);
+  $(document.body).fadeIn(3000);
+
+  var imageArray = JSON.parse(images);
 
   $('#post_sequence ').submit(function(e){
     e.preventDefault();
@@ -11,6 +11,17 @@ $(document).ready(function() {
       method: 'post',
       data: $('input').serialize(),
       success: function(){
+      }
+    });
+  });
+
+  $('#rate-sequence-button').on('click', function(){
+    $.ajax({
+      url: '/rating',
+      method: 'post',
+      data: $('#rate-sequence-button')[0].name + "=" + $('#rateYo').rateYo('rating'),
+      success: function(){
+        removeOverlay();
       }
     });
   });
@@ -40,17 +51,6 @@ function hideArrowDown(anchorlink) {
     $('.arrowDown').show();
   }
 }
-  // ######### Hash an array for testing loadimages function for slideshow ########
-  // var yogaArray = ['Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
-  //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
-  //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',
-  //                  'Warrior1', 'Warrior2', 'Warrior3', 'Triangle',]
-  // var hash = {
-  //   Warrior1: {image: '/images/beach-yoga.jpg'},
-  //   Warrior2: {image: '/images/Creative-yoga-and-sunset-vector-03.jpg'},
-  //   Warrior3: {image: '/images/yoga-tree.jpg'},
-  //   Triangle: {image: '/images/yoga.jpg'}
-  // };
 
   $('input.checkbox').on('change', function() {
     $('input.checkbox').not(this).prop('checked', false);  
@@ -82,26 +82,27 @@ function hideArrowDown(anchorlink) {
     }
   });
   function toggleMainPage(){
-    $('.select').toggleClass('hidden');
-    $('.select time').toggleClass('hidden');
-    $('.select energy').toggleClass('hidden');
-    $('.select goal').toggleClass('hidden');
+    $('.section').toggleClass('hidden');
+    $('.ft-tableCell').toggleClass('hidden');
   };
 
   function removeOverlay(){
-    overlayActive= false;
     clearInterval(slideInterval);
     $('#bgDimmer').removeClass('overlay');
     $('#slideshow').removeClass('modal');
     $('#close-overlay').addClass('hidden');
     toggleMainPage();
     $('#slideshow img').remove();
-    intervalInc = 0;
+    $('#slideshow .pose-name').remove();
+    $('#rateYo').rateYo('destroy');
+    $('#rate-sequence-title').addClass('hidden');
+    $('#rate-sequence-container').addClass('hidden');
+    $('#rate-sequence-button').addClass('hidden');
+    $('#rate-sequence').addClass('hidden');
   };
 
-  function activateOverlay(){
-    startSlideShow();
-    overlayActive = true;
+  function activateOverlay(loadslides){
+    startSlideShow(loadslides);
     $('#bgDimmer').addClass('overlay');
     setTimeout(function(){
       $('#slideshow').addClass('modal');
@@ -110,17 +111,20 @@ function hideArrowDown(anchorlink) {
     }, 200);
   };
 
-  $('#overlay-button').on('click', activateOverlay);  
+  $('#top-rated-button').on('click', function(){
+   activateOverlay(loadSlidesRandom());
+  });
+  $('#overlay-button').on('click', function(){
+   activateOverlay(loadSlidesChosen());  
+  });
   $('#close-overlay').on('click', removeOverlay);
   $('#bgDimmer').on('click', removeOverlay);
 
-  function loadSlides(){
+  function loadSlidesRandom(){
     setTimeout(function(){
       $.ajax({
-        url: '/generate',
+        url: '/rating',
         method: 'get',
-        error: function(){
-        },
         success: function(data){
           var poseArray = JSON.parse(data);
           for (var i = 0; i < poseArray.length; i++){
@@ -128,63 +132,90 @@ function hideArrowDown(anchorlink) {
               var pose = Object.keys(imageArray[poseInt])[0];
               var poseURL = imageArray[poseInt][pose];
               if(poseArray[i] == pose){
-                  $('#slideshow').append('<img class="nextSlide" src=' + poseURL + '>');
+                $('#slideshow').append('<img class="nextSlide" src=' + poseURL + '>');
+                $('#slideshow').append('<div class="pose-name hidden"><label>' + pose + '</label></div>');
               }
             }
+          }
+          if($('#slideshow')[0].className.includes('modal')){
+            $('img').eq(0).addClass('futureSlide');
+            $('img').eq(0).removeClass('nextSlide');
           }
         }
       });
     }, 1000);
-
-    // The next step is to iterate through an array to find the proper pose name, and then match that with 
-    // the hash to retrieve the correlating image url for that array element.
-    // for (var i = 0; i < poseArray.length; i++)
-    // {
-    //   for(var poseInt = 0; poseInt < imageArray.length; poseInt++)
-    //   {
-    //     var pose = Object.keys(imageArray[poseInt])[0];
-    //     var poseURL = imageArray[poseInt][pose];
-    //     if(poseArray[i] == pose)
-    //       {
-    //         $('#slideshow').append('<img class="nextSlide" src=' + poseURL + '>');
-    //       };
-    //   }
-    // };
   };
 
-  function removeLastSlide(){
-    var lastSlide = $('img').last().detach();
-    lastSlide.removeClass();
-    lastSlide.prependTo('#slideshow').addClass('nextSlide')
-  }
-
-  function startSlideShow(){  
-    loadSlides();
+  function loadSlidesChosen(){
     setTimeout(function(){
-      $('img').eq(0).addClass('futureSlide');
-      $('img').eq(0).removeClass('nextSlide');
-      window.slideInterval = setInterval(function(){
-        var totalImages = $('#slideshow img').siblings('img').size();
-        if(intervalInc > 0)
-        {
-          $('img').eq(intervalInc - 1).addClass('pastSlide');
-          $('img').eq(intervalInc - 1).removeClass('activeSlide');
+      $.ajax({
+        url: '/generate',
+        method: 'get',
+        success: function(data){
+          var poseArray = JSON.parse(data);
+          for (var i = 0; i < poseArray.length; i++){
+            for(var poseInt = 0; poseInt < imageArray.length; poseInt++){
+              var pose = Object.keys(imageArray[poseInt])[0];
+              var poseURL = imageArray[poseInt][pose];
+              if(poseArray[i] == pose){
+                if($('#slideshow')[0].className.includes('modal')){
+                  $('#slideshow').append('<img class="nextSlide" src=' + poseURL + '>');
+                  $('#slideshow').append('<div class="pose-name hidden"><label>' + pose + '</label></div>');
+                }
+              }
+            }
+          }
+            $('img').eq(0).addClass('futureSlide');
+            $('img').eq(0).removeClass('nextSlide');
         }
-        if(intervalInc == totalImages || intervalInc > 1)
-        {
-          $('img').eq(intervalInc - 2).addClass('nextSlide');
-        }
-        $('img').eq(intervalInc).addClass('activeSlide');
-        $('img').eq(intervalInc).removeClass('futureSlide');
-        $('img').eq(intervalInc + 1).addClass('futureSlide');
-        $('img').eq(intervalInc + 1).removeClass('nextSlide');
-        if(intervalInc <= totalImages)
-        {
-          intervalInc++;
-        }
-      }, 2000);
+      });
+    }, 1000);
+  };
+
+  function startSlideShow(loadslides){  
+    var intervalInc = 0
+    var rated = false;
+    $('#slideshow img').remove();
+    $('#slideshow .pose-name').remove();
+    loadslides;
+    setTimeout(function(){
+      if($('#slideshow')[0].className.includes('modal')){
+        window.slideInterval = setInterval(function(){
+          totalImages = $('#slideshow img').siblings('img').size();
+          if(intervalInc > 0){
+            $('img').eq(intervalInc - 1).addClass('pastSlide');
+            $('img').eq(intervalInc - 1).removeClass('activeSlide');
+            $('.pose-name').eq(intervalInc - 1).addClass('hidden');
+          }
+          if(intervalInc == totalImages || intervalInc > 1){
+            $('img').eq(intervalInc - 2).addClass('nextSlide');
+          }
+          $('img').eq(intervalInc).addClass('activeSlide');
+          $('img').eq(intervalInc).removeClass('futureSlide');
+          $('img').eq(intervalInc + 1).addClass('futureSlide');
+          $('img').eq(intervalInc + 1).removeClass('nextSlide');
+          $('.pose-name').eq(intervalInc).removeClass('hidden');
+          if(intervalInc <= totalImages){
+            intervalInc++;
+          }
+          if($('#slideshow img').siblings('img').last()[0].className.includes('pastSlide') && rated === false){
+            setTimeout(function(){
+              if($('#slideshow')[0].className.includes('modal')){
+                $('#rate-sequence-button').removeClass('hidden');
+                $('#slideshow label').removeClass('hidden');
+                $('#rateYo').rateYo({
+                  rating: 0,
+                  fullStar: true,
+                  ratedFill: "#064E75",
+                  starWidth: "40px"
+                })
+                rated = true;
+              }
+            }, 3000);
+          }
+        }, 2000);
+      }
     }, 1000);
   };
 
 });
-

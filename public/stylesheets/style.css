@@ -41,6 +41,19 @@ label.clicked {
 }
 
 #fullpage {
+  background-color: rgba(255,255,255,0.1);
+}
+  
+#footer {
+  background-color: #cfa268;
+  border:1px solid white;
+  bottom:0px;
+  height:5%;
+  left:0px;
+  opacity: 0.5;
+  position:fixed;
+  text-align: right;
+  width:100%;
   background-color: rgba(255,255,255,0.0);
 }
 
@@ -72,15 +85,15 @@ label.clicked {
 .modal{ 
   background-color: rgba(255,255,255,0.1);
   border-radius: 20px;
-  height: 80%;
-  left: 10%;  
+  height: 90%;
+  left: 5%;  
   line-height: 200px;
   margin: 50px auto;
   position: absolute;
   text-align: center;
-  top: 5%; 
+  top: -2%; 
   transition: all 2.0s;
-  width: 80%;
+  width: 90%;
   z-index: 11;
 }
 
@@ -252,21 +265,37 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #rateYo{
-  left: 40%;
+  left: 29%;
   position: absolute;
-  top: 55%;
+  top: 30%;
   z-index: 25;
+}
+
+#slideshow div.pose-name{
+  margin-top: 455px;
+}
+
+#slideshow div.pose-name label{
+  font-size: 2.5em;
+}
+
+#slideshow div label{
+  color: white;
+}
+
+#slideshow div label#rate-sequence-title{
+  left: 18%;
+  position: absolute;
 }
 
 #slideshow img.pastSlide{
   border-radius: 20px;
-  height: 250px;
-  left: 5%;
+  left: -22%;
   opacity: 0.75;
   position: absolute;
-  top: 25%;
-  transition: all 2.0s;
-  width: 250px;
+  top: 3%;
+  transform: scale(0.3);
+  transition: all 1.0s;
   z-index: 18;
   -webkit-filter: grayscale(80%);
   filter: grayscale(80%);
@@ -274,13 +303,12 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slideshow img.activeSlide{
   border-radius: 20px;
-  height: 500px;
-  left: 25%;
+  left: 15.5%;
   opacity: 1.0;
   position: absolute;
-  top: 5%;
-  transition: opacity 2.0s ease-in-out, all 2.0s;
-  width: 500px;
+  top: -1%;
+  transform: scale(0.85);
+  transition: opacity 2.0s ease-in-out, all 1.0s;
   z-index: 20;
   -webkit-filter: grayscale(80%);
   filter: grayscale(80%);
@@ -288,13 +316,12 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slideshow img.nextSlide{
   border-radius: 20px;
-  height: 250px;
-  left: 30%;
+  left: 15%;
   opacity: 0;
   position: absolute;
-  top: 25%;
-  transition: all 2.0s;
-  width: 250px;
+  top: 5%;
+  transform: scale(0.25);
+  transition: all 1.0s;
   z-index: 15;
   -webkit-filter: grayscale(80%);
   filter: grayscale(80%);
@@ -302,22 +329,54 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slideshow img.futureSlide{
   border-radius: 20px;
-  height: 250px;
-  left: 70%;
+  left: 53.5%;
   opacity: .75;
   position: absolute;
-  top: 25%;
-  transition: all 2.0s, opacity 2.0s ease-in;
-  width: 250px;
+  top: 3%;
+  transform: scale(0.3);
+  transition: all 1.0s, opacity 1.0s ease-in;
   visibility: visible;
   -webkit-filter: grayscale(80%);
   z-index: 18;
 }
 
-#slideshow label#rate-sequence{
-
+#slideshow img.pastSlide, #slideshow img.futureSlide,
+#slideshow img.activeSlide, #slideshow img.nextSlide{
+ -webkit-filter: grayscale(100%);
 }
 
 #slideshow#rateYo{
   visibility: none;
+}
+
+
+#random-rated-sequence{
+  background: rgba(0, 0, 0, 0);
+}
+
+#rate-sequence-container button#rate-sequence-button{
+  background-color: rgba(0,0,0,0.0);
+  border-radius: 10px;
+  color: white;
+  border: 4px solid #064E75;
+  font-weight: bold;
+  font-size: 27px;
+  left: 30%;
+  padding: 5px;
+  position: absolute;
+  top: 46%;
+  z-index: 25;
+}
+
+#rate-sequence-container button#rate-sequence-button:hover{
+  border: 4px solid white;
+}
+
+#rate-sequence-container{
+  display: -webkit-inline-box;
+  height: 500px;
+  left: 28%;
+  position: absolute;
+  top: 17%;
+  width: 500px;
 }
