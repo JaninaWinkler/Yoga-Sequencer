@@ -238,13 +238,19 @@ input[type=range]:focus::-ms-fill-upper {
   background: #314767;
 }
 
-
-
 #rateYo{
   left: 40%;
   position: absolute;
   top: 55%;
   z-index: 25;
+}
+
+#slideshow div.pose-name{
+  margin-top: 420px;
+}
+
+#slideshow div label{
+  color: white;
 }
 
 #slideshow img.pastSlide{

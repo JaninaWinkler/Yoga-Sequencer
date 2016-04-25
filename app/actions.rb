@@ -23,5 +23,5 @@ post '/rating' do
 end
 
 get '/rating' do
-  @sequence = Sequence.where(rating: 4..5).order(rating: :asc).last.sequence_array
+  @sequence = Sequence.where(rating: 5).order(rating: :asc).last.sequence_array
 end
