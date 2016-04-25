@@ -183,7 +183,8 @@ $('.arrowDown').click(function(){
                 $('#rateYo').rateYo({
                   rating: 0,
                   fullStar: true,
-                  ratedFill: #064E75
+                  ratedFill: "#064E75",
+                  starWidth: "40px"
                 })
                 rated = true;
               }

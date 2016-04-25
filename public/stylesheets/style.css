@@ -239,7 +239,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #rateYo{
-  left: 33%;
+  left: 29%;
   position: absolute;
   top: 30%;
   z-index: 25;
@@ -253,7 +253,7 @@ input[type=range]:focus::-ms-fill-upper {
   color: white;
 }
 
-#slideshow label #rate-sequence-title{
+#slideshow div label#rate-sequence-title{
   left: 18%;
   position: absolute;
 }
@@ -276,7 +276,7 @@ input[type=range]:focus::-ms-fill-upper {
   left: 15.5%;
   opacity: 1.0;
   position: absolute;
-  top: 2%;
+  top: -1%;
   transform: scale(0.85);
   transition: opacity 2.0s ease-in-out, all 1.0s;
   z-index: 20;
@@ -325,10 +325,21 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #rate-sequence-container button#rate-sequence-button{
-  left: 40%;
+  background-color: rgba(0,0,0,0.0);
+  border-radius: 10px;
+  color: white;
+  border: 4px solid #064E75;
+  font-weight: bold;
+  font-size: 27px;
+  left: 30%;
+  padding: 5px;
   position: absolute;
   top: 46%;
   z-index: 25;
+}
+
+#rate-sequence-container button#rate-sequence-button:hover{
+  border: 4px solid white;
 }
 
 #rate-sequence-container{
