@@ -239,9 +239,9 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #rateYo{
-  left: 40%;
+  left: 33%;
   position: absolute;
-  top: 55%;
+  top: 30%;
   z-index: 25;
 }
 
@@ -251,6 +251,11 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slideshow div label{
   color: white;
+}
+
+#slideshow label #rate-sequence-title{
+  left: 18%;
+  position: absolute;
 }
 
 #slideshow img.pastSlide{
@@ -314,6 +319,23 @@ input[type=range]:focus::-ms-fill-upper {
   visibility: none;
 }
 
+
 #random-rated-sequence{
   background: rgba(0, 0, 0, 0);
+}
+
+#rate-sequence-container button#rate-sequence-button{
+  left: 40%;
+  position: absolute;
+  top: 46%;
+  z-index: 25;
+}
+
+#rate-sequence-container{
+  display: -webkit-inline-box;
+  height: 500px;
+  left: 28%;
+  position: absolute;
+  top: 17%;
+  width: 500px;
 }

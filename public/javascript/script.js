@@ -72,6 +72,8 @@ $('.arrowDown').click(function(){
     $('#slideshow img').remove();
     $('#slideshow .pose-name').remove();
     $('#rateYo').rateYo('destroy');
+    $('#rate-sequence-title').addClass('hidden');
+    $('#rate-sequence-container').addClass('hidden');
     $('#rate-sequence-button').addClass('hidden');
     $('#rate-sequence').addClass('hidden');
   };
@@ -140,10 +142,8 @@ $('.arrowDown').click(function(){
               }
             }
           }
-          // if($('#slideshow')[0].className.includes('modal')){
             $('img').eq(0).addClass('futureSlide');
             $('img').eq(0).removeClass('nextSlide');
-          // }
         }
       });
     }, 1000);
@@ -182,7 +182,8 @@ $('.arrowDown').click(function(){
                 $('#slideshow label').removeClass('hidden');
                 $('#rateYo').rateYo({
                   rating: 0,
-                  fullStar: true
+                  fullStar: true,
+                  ratedFill: #064E75
                 })
                 rated = true;
               }
