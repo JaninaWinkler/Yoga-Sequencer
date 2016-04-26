@@ -173,7 +173,7 @@ function hideArrowDown(anchorlink) {
   };
 
   function startSlideShow(loadslides){  
-    var intervalInc = 0
+    var intervalInc = 0;
     var rated = false;
     $('#slideshow img').remove();
     $('#slideshow .pose-name').remove();
