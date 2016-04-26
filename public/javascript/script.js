@@ -64,8 +64,8 @@ $('.arrowDown').click(function(){
     }
   });
   function toggleMainPage(){
-    $('.section').toggleClass('hidden');
-    $('.ft-tableCell').toggleClass('hidden');
+    $('#fullpage').toggleClass('hidden');
+    // $('.ft-tableCell').toggleClass('hidden');
   };
 
   function removeOverlay(){
@@ -155,7 +155,7 @@ $('.arrowDown').click(function(){
   };
 
   function startSlideShow(loadslides){  
-    var intervalInc = 0
+    var intervalInc = 0;
     var rated = false;
     $('#slideshow img').remove();
     $('#slideshow .pose-name').remove();
@@ -199,5 +199,21 @@ $('.arrowDown').click(function(){
       }
     }, 1000);
   };
+
+  $('#sound-button').on('click', function(){
+    $('#soundcloud-container').animate({
+      right: "toggle"
+      // height: "toggle",
+      // width: "toggle"
+    }, 'fast');
+    if($('#sound-button')[0].className.includes("soundcloud-offscreen")){
+      $('#sound-button').toggleClass('soundcloud-offscreen');
+    }
+    else{
+      setTimeout(function(){
+        $('#sound-button').toggleClass('soundcloud-offscreen');
+      }, 250);
+    }
+  });
 
 });
