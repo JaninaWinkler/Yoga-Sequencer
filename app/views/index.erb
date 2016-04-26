@@ -1,3 +1,9 @@
+<div id="soundcloud-container"><iframe width="100%" height="235" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/7396323&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+</div>
+
+<div id="soundcloud-button-container">
+  <button id="sound-button" class="soundcloud-offscreen">♫</button>
+</div>
 
 <div id="bgDimmer"></div>
 <div id="slideshow">
@@ -11,21 +17,26 @@
 
 <div id="fullpage">
   <div class="section" id="section1">
-    <h1>YogaMe!</h1>
+    <h1>ॐ <em>Asana</em>pp</h1>
   </div>
-
   <div class="section">
     <p>Your personal yoga sequence <br> in four steps.</p>
   </div>
-    <div class="section">Unless you don't have time <br> for four steps.</div>
-    <div class="section"><button id="top-rated-button">You can get a top-rated <br> sequence immediately.</button></div>
-    <div class="section"><p>Or get one customized <br> just for you.</div>
-
+  <div class="section">
+    <p>Unless you don't have time <br> for four steps.</p>
+  </div>
+  <div class="section">
+    <p>You can get a top-rated <br> sequence immediately.</p>
+  </div>
+  <div class="section"><button id="top-rated-button">Get a sequence NOW!</button>
+  </div>
+  <div class="section"><p>Or get one customized <br> just for you.
+  </div>
   <div class="section">
     <form id="post_sequence" method="post" action="/generate">
       <div class="slide" id="time-slide">
         <div class="select time">
-          <p class="question">1. Select Time.</p>
+          <p class="question">1. Select Time:</p>
           <input id="userTime" type="range" min="1" max="3" step="1" onchange="userTimeTextbox.value = userTime.value" name="time" />
           <br><input id="userTimeTextbox" type="text" readonly="readonly" value="A fair amount"/>
           <br>
@@ -33,7 +44,7 @@
       </div>
       <div class="slide" id="start-slide">
         <div class="select start">
-          <p class="question">2. Select Starting Position.</p>
+          <p class="question">2. Select Starting Position:</p>
           <input id="userStart" type="range" min="1" max="2" step="1" onchange="userStartTextbox.value = userStart.value" />
           <br><input id="userStartTextbox" type="text" readonly="readonly" name="start" value="Standing"/>
           <br>
@@ -41,7 +52,7 @@
       </div>
       <div class="slide" id="goal-slide"> 
         <div class="select goal">         
-          <p class="question">3. Select Goal.</p>
+          <p class="question">3. Select Goal:</p>
           <label class="focus-label clicked"><input type="checkbox" class="hidden" id="userInputStretch" name="focus" value="Stretch" checked="true">Stretch</label>
           <label class="focus-label"><input type="checkbox" class="hidden" id="userInputMove" name="focus" value="Move">Move</label>
           <label class="focus-label"><input type="checkbox" class="hidden" id="userInputStrength" name="focus" value="Strength">Strength</label>
@@ -49,9 +60,10 @@
       </div>
     </div>
     <div class="slide">
-      <p class="question">4. Create Sequence.</p><button id="overlay-button" value="">YogaMe!</button>
+      <p class="question">4. Create Sequence:</p><button id="overlay-button" value="">Get me Yoga!</button>
     </div>
     </form>
+  </div>
 </div>
 <div class="arrowUp"></div>
 <div class="arrowDown"></div>
