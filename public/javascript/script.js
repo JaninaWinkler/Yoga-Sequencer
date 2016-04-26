@@ -65,7 +65,6 @@ $('.arrowDown').click(function(){
   });
   function toggleMainPage(){
     $('#fullpage').toggleClass('hidden');
-    // $('.ft-tableCell').toggleClass('hidden');
   };
 
   function removeOverlay(){
@@ -203,8 +202,6 @@ $('.arrowDown').click(function(){
   $('#sound-button').on('click', function(){
     $('#soundcloud-container').animate({
       right: "toggle"
-      // height: "toggle",
-      // width: "toggle"
     }, 'fast');
     if($('#sound-button')[0].className.includes("soundcloud-offscreen")){
       $('#sound-button').toggleClass('soundcloud-offscreen');
