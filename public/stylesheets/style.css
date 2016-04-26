@@ -52,12 +52,14 @@ label.clicked {
 }
 
 #fullpage {
-  background-color: rgba(255,255,255,0.1);
-  color: white;
+/*  background-color: rgba(255,255,255,0.1);
+  color: white;*/
 }
   
 
 .section {
+  background-color: rgba(255,255,255,0.1);
+  color: white;
   font-size: 2em;
   text-align: center;
   -webkit-text-stroke: 1px black;
@@ -123,13 +125,11 @@ label.clicked {
 }
 
 #overlay-button:hover {
-  border: 10px solid white;
-  font-size: 45px;
+  border: 8px solid white;
 }
 
 #overlay-button:active {
-  border: 10px solid white;
-  font-size: 45px;
+  border: 8px solid white;
 }
 
 #top-rated-button {
@@ -174,7 +174,7 @@ label.clicked {
 .arrowUp, 
 .arrowDown{
   position:fixed;
-  z-index:99;
+  z-index:5;
   cursor: pointer;
   width: 0;
   height: 0;
@@ -283,18 +283,18 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #rateYo{
-  left: 29%;
+  left: 25%;
   position: absolute;
   top: 30%;
   z-index: 25;
 }
 
 #slideshow div.pose-name{
-  margin-top: 455px;
+  margin-top: 422px;
 }
 
 #slideshow div.pose-name label{
-  font-size: 2.5em;
+  font-size: 1.6em;
 }
 
 #slideshow div label{
@@ -308,7 +308,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slideshow img.pastSlide{
   border-radius: 20px;
-  left: -22%;
+  left: -25%;
   opacity: 0.75;
   position: absolute;
   top: 3%;
@@ -321,7 +321,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slideshow img.activeSlide{
   border-radius: 20px;
-  left: 15.5%;
+  left: 13.5%;
   opacity: 1.0;
   position: absolute;
   top: -1%;
@@ -347,7 +347,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slideshow img.futureSlide{
   border-radius: 20px;
-  left: 53.5%;
+  left: 50%;
   opacity: .75;
   position: absolute;
   top: 3%;
@@ -379,7 +379,7 @@ input[type=range]:focus::-ms-fill-upper {
   border: 4px solid #064E75;
   font-weight: bold;
   font-size: 27px;
-  left: 30%;
+  left: 26%;
   padding: 5px;
   position: absolute;
   top: 46%;
@@ -397,4 +397,41 @@ input[type=range]:focus::-ms-fill-upper {
   position: absolute;
   top: 17%;
   width: 500px;
+}
+
+#soundcloud-container{
+  display: none;
+  float: right;
+  left: 80%;
+  overflow: hidden;
+  position: fixed;
+  top: 0%;
+  z-index: 15;
+}
+
+#sound-button{
+  background-color:rgba(0,0,0,0.0);  
+  border-radius: 15px;
+  border: 8px solid #064E75;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  left: 75%;
+  position: absolute;
+  top: 1%;
+  -webkit-text-stroke: 0.8px black;
+  z-index: 25;
+}
+
+#sound-button:hover{
+  border: 8px solid white;
+  /*color: white;*/
+}
+
+#sound-button.soundcloud-offscreen{
+  left: 95%;
+}
+
+.soundcloud-onscreen{
+
 }
