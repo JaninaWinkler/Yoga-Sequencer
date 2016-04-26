@@ -34,24 +34,6 @@ $('.arrowDown').click(function(){
     $.fn.fullpage.moveSectionDown();
 });
 
-function hideArrowUp() {
-  if(index == 1){
-    $('.arrowUp').hide();
-   }
-  else {
-    $('.arrowUp').show();
-  }
-}
-
-function hideArrowDown(anchorlink) {
-  if(index == 3){
-    $('.arrowDown').hide();
-  }
-  else {
-    $('.arrowDown').show();
-  }
-}
-
   $('input.checkbox').on('change', function() {
     $('input.checkbox').not(this).prop('checked', false);  
   });
