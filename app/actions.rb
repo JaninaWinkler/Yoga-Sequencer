@@ -25,5 +25,3 @@ end
 get '/rating' do
   @sequence = Sequence.where(rating: 5).order("RANDOM()").last.sequence_array
 end
-
-  # @sequence = Sequence.where(rating: 5).order(rating: :asc).last.sequence_array

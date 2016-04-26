@@ -198,8 +198,6 @@ input[type=range] {
   width: 30%;
   margin-top: 0px;
   margin-bottom: 40px;
-/*  margin: 8px 0;
-*/
 }
 input[type=range]:focus {
   outline: none;
@@ -425,7 +423,6 @@ input[type=range]:focus::-ms-fill-upper {
 
 #sound-button:hover{
   border: 8px solid white;
-  /*color: white;*/
 }
 
 #sound-button.soundcloud-offscreen{
