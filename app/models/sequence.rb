@@ -1,5 +1,4 @@
 require 'yaml'
-require 'pry'
 require 'json'
 
 class Sequence < ActiveRecord::Base
@@ -25,7 +24,6 @@ class Sequence < ActiveRecord::Base
     # an Array of Strings representing the types of subsequences
     def create_outline(time, start, focus)
       # initialize the outline with the start type
-      # binding.pry
       model = load_model(focus) 
       min, max = OUTLINE_TIME_CONSTRAINTS[time - 1]
       outline = []
