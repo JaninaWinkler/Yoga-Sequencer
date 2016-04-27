@@ -1,5 +1,4 @@
 require 'yaml'
-require 'pry'
 require 'json'
 
 def load_model(version)
