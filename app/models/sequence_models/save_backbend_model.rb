@@ -99,8 +99,7 @@ model = {
   'Table Top'=> 0.1,
   'Downward Facing Dog'=> 0.1,
   'Lie on Stomach'=> 0.1,
-  'Cobra'=> 0.1,
-  'Table Top'=> 0.1,
+  'Cobra'=> 0.2
   },
   'Lie on Stomach'=> {
   'Cobra'=> 0.1,
@@ -177,7 +176,7 @@ model = {
   'Wild Thing'=> {
   'Wheel'=> 0.3,
   'Downward Facing Dog'=> 0.3,
-  'Three-Legged Downward Facing Dog'=> 0.4,
+  'Three-Legged Downward Facing Dog'=> 0.4
   },
   'Three-Legged Downward Facing Dog'=> {
   'Downward Facing Dog'=> 0.4, 

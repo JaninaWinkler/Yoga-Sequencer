@@ -50,7 +50,11 @@ model = {
   'Knee-to-Arm Plank'=> 0.2
   },
   'Four-Limb Staff'=> {
-  'Plank'=> 1.0
+  'Dolphin'=> 0.2,
+  'Headstand'=> 0.3,
+  'Plank'=> 0.3,
+  'Downward Facing Dog'=> 0.2,
+
   },
   'Headstand'=> {
   'Childs Pose'=> 0.2,
@@ -145,7 +149,12 @@ model = {
   'Easy Pose'=> 0.1
   },
   'Fish'=> {
-  'Corpse'=> 1.0,
+  'Corpse'=> 0.2,
+  'Boat'=> 0.2,
+  'Shoulder Stand'=> 0.2,
+  'Easy Pose'=> 0.1,
+  'Reclined knee-to-chest'=> 0.1,
+  'Plow'=> 0.2,
   },
   'Forward Fold' => {
   'Crow'=> 0.3,
