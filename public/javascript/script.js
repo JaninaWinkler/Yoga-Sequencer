@@ -106,6 +106,7 @@ $('.arrowDown').click(function(){
       $.ajax({
         url: '/rating',
         method: 'get',
+        dataType: 'jsonp',
         success: function(data){
           var poseArray = JSON.parse(data);
           for (var i = 0; i < poseArray.length; i++){
