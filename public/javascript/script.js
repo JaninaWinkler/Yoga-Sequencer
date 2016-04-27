@@ -64,7 +64,7 @@ $('.arrowDown').click(function(){
     }
   });
   function toggleMainPage(){
-    $('#fullpage').toggleClass('hidden');
+    $('#fullpage').toggleClass('hidden', 'slow');
     // $('.ft-tableCell').toggleClass('hidden');
   };
 

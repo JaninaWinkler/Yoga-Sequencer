@@ -20,6 +20,8 @@ body.display {
 h1 {
   text-align: left;
   padding-left: 150px;
+  -webkit-text-stroke: 1.2px black;
+
 }
 
 label.focus-label {
@@ -375,7 +377,8 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slideshow img.pastSlide, #slideshow img.futureSlide,
 #slideshow img.activeSlide, #slideshow img.nextSlide{
- -webkit-filter: grayscale(100%);
+/*  -webkit-filter: grayscale(100%);
+*/  -webkit-filter: hue-rotate(180);
 }
 
 #slideshow#rateYo{

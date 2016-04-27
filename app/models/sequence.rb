@@ -1,5 +1,5 @@
 require 'yaml'
-require 'pry'
+require 'byebug'
 require 'json'
 
 class Sequence < ActiveRecord::Base
@@ -29,11 +29,11 @@ class Sequence < ActiveRecord::Base
       model = load_model(focus) 
       min, max = OUTLINE_TIME_CONSTRAINTS[time - 1]
       outline = []
-        until outline.length.between?(min, max)
-          outline.clear
-          outline << start
-          populate_outline(outline, model, start)
-        end
+      until outline.length.between?(min, max)
+        outline.clear
+        outline << start
+        populate_outline(outline, model, start)
+      end
       outline
     end
 
@@ -42,7 +42,7 @@ class Sequence < ActiveRecord::Base
       r = rand
       acc = 0.0
       model[outline.last].each do |key, value|
-      acc += value
+        acc += value
         if r <= acc
           outline << key
           break
@@ -63,11 +63,11 @@ class Sequence < ActiveRecord::Base
       min = 8
       max = 10
     elsif type == 'Core'
-      min = 5
-      max = 8
+      min = 8
+      max = 12
     elsif type == 'Backbend'
-      min = 5
-      max = 7
+      min = 8
+      max = 12
     elsif type == 'Hips'
       min = 6
       max = 8
@@ -91,17 +91,17 @@ class Sequence < ActiveRecord::Base
     else 
       sequence << sequence_model.keys.sample
     end
-      until finished?(sequence, sequence_model)
-        r = rand
-        acc = 0.0
-        sequence_model[sequence.last].each do |key, value|
+    until finished?(sequence, sequence_model)
+      r = rand
+      acc = 0.0
+      sequence_model[sequence.last].each do |key, value|
         acc += value
-          if r <= acc
-            sequence << key
-            break
-          end
+        if r <= acc
+          sequence << key
+          break
         end
       end
+    end
   end
 end
 

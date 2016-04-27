@@ -2,15 +2,15 @@ require 'yaml'
 
 model = {
   'Squat'=> {
-  'Downward Facing Dog'=> 0.1,
-  'Plank'=> 0.1,
-  'Easy Pose'=> 0.1,
-  'Table Top'=> 0.1,
-  'Chair'=> 0.1,
-  'Crow'=> 0.2,
+  'Crow'=> 0.1,
+  'Boat'=> 0.2,
+  'Plow'=> 0.1,
+  'Reclined knee-to-chest'=> 0.1,
+  'Shoulder Stand'=> 0.1,
   'Childs Pose'=> 0.1,
-  'Forward Fold'=> 0.1,
-  'Ragdoll'=> 0.1
+  'Dolphin'=> 0.1,
+  'Headstand'=> 0.1,
+  'Three-Legged Downward Facing Dog'=> 0.1
   },
   'Boat'=> {
   'Shoulder Stand'=> 0.1,
@@ -24,7 +24,7 @@ model = {
   'Shoulder Stand'=> 0.3,
   'Corpse'=> 0.3,
   'Easy Pose'=> 0.2,
-  'Reclined knee-to-chest'=> 0.2,
+  'Reclined knee-to-chest'=> 0.2
   },
   'Dolphin'=> {
   'Downward Facing Dog'=> 0.1,
@@ -53,8 +53,10 @@ model = {
   'Plank'=> 1.0
   },
   'Headstand'=> {
-  'Childs Pose'=> 0.6,
+  'Childs Pose'=> 0.2,
+  'Three-Legged Downward Facing Dog'=> 0.2,
   'Downward Facing Dog'=> 0.1, 
+  'Corpse'=> 0.2,
   'Plank'=> 0.1,
   'Table Top'=> 0.1,
   'Easy Pose'=> 0.1
@@ -73,13 +75,13 @@ model = {
   'Reclined knee-to-chest'=> {
   'Boat'=> 0.4,
   'Corpse'=> 0.3,
-  'Easy Pose'=> 0.3,
+  'Easy Pose'=> 0.3
   },
   'Table Top'=> {
+  'Headstand'=> 0.3,
   'Dolphin'=> 0.2,
-  'Downward Facing Dog'=> 0.2, 
-  'Plank'=> 0.2,
-  'Headstand'=> 0.1,
+  'Downward Facing Dog'=> 0.1, 
+  'Plank'=> 0.1,
   'Cat'=> 0.1,
   'Easy Pose'=> 0.1,
   'Ragdoll'=> 0.1
@@ -96,23 +98,27 @@ model = {
   'Warrior 3'=> {
   'Forward Fold'=> 0.2,
   'Chair'=> 0.4,
-  'Ragdoll'=> 0.2
+  'Ragdoll'=> 0.2,
+  'Three-Legged Downward Facing Dog'=> 0.2
   },
   'Crow'=> {
-  'Downward Facing Dog'=> 0.3, 
-  'Plank'=> 0.3,
-  'Forward Fold'=> 0.2,
-  'Ragdoll'=> 0.2    
+  'Three-Legged Downward Facing Dog'=> 0.2,
+  'Arm-Balance Split'=> 0.3,
+  'Dolphin'=> 0.1,
+  'Headstand'=> 0.2,
+  'Plank'=> 0.1,
+  'Downward Facing Dog'=> 0.1
   },
   'Three-Legged Downward Facing Dog'=> {
-  'Downward Facing Dog'=> 0.5,
-  'Knee-to-Arm Plank'=> 0.5
+  'Downward Facing Dog'=> 0.2,
+  'Knee-to-Arm Plank'=> 0.6,
+  'Arm-Balance Split'=> 0.2
   },
   'Knee-to-Arm Plank'=> {
-  'Plank'=> 0.3,
+  'Plank'=> 0.1,
   'Four-Limb Staff'=> 0.1,
-  'Three-Legged Downward Facing Dog'=> 0.3,
-  'Arm-Balance Split'=> 0.3,
+  'Three-Legged Downward Facing Dog'=> 0.2,
+  'Arm-Balance Split'=> 0.6,
   },
   'Arm-Balance Split'=> {
   'Downward Facing Dog'=> 0.2,
@@ -126,38 +132,37 @@ model = {
   'Easy Pose'=> 0.1,
   'Reclined knee-to-chest'=> 0.1,
   'Plow'=> 0.2,
-  'Fish'=> 0.2,
+  'Fish'=> 0.2
   },
   'Childs Pose'=> {
+  'Headstand'=> 0.3,
   'Dolphin'=> 0.1,
-  'Downward Facing Dog'=> 0.2, 
+  'Downward Facing Dog'=> 0.1, 
   'Plank'=> 0.1,
   'Four-Limb Staff'=> 0.1,
-  'Headstand'=> 0.1,
   'Table Top'=> 0.1,
   'Cat'=> 0.1,
-  'Easy Pose'=> 0.2
+  'Easy Pose'=> 0.1
   },
   'Fish'=> {
   'Corpse'=> 1.0,
   },
   'Forward Fold' => {
-  'Downward Facing Dog'=> 0.2,
+  'Crow'=> 0.3,
+  'Boat'=> 0.3,
+  'Downward Facing Dog'=> 0.1,
   'Plank'=> 0.1,
-  'Chair'=> 0.2,
-  'Warrior 3'=> 0.2,
-  'Crow'=> 0.2,
-  'Ragdoll'=> 0.1
+  'Chair'=> 0.1,
+  'Warrior 3'=> 0.1
   },
   'Easy Pose'=> {
     'Boat'=> 0.2,
+    'Upward Plank'=> 0.3,
     'Childs Pose'=> 0.1,
     'Corpse'=> 0.1,
-    'Table Top'=> 0.2, 
-    'Upward Plank'=> 0.1,
     'Plow'=> 0.1,
     'Forward Fold'=> 0.1,
-    'Ragdoll'=> 0.1,
+    'Ragdoll'=> 0.1
   },
   'Ragdoll'=> {
 
