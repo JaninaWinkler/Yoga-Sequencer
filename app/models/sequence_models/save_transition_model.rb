@@ -50,13 +50,22 @@ model =   {
     'Plank'=>0.2
   }, 
   'Cobra'=> {
-    'Plank'=> 0.5,
-    'Childs Pose'=> 0.5
+    'Plank'=> 0.2,
+    'Childs Pose'=> 0.2,
+    'Four-Limb Staff'=> 0.2,
+    'Downward Facing Dog'=> 0.1,
+    'Table Top'=> 0.1,
+    'Cat'=> 0.1,
+    'Cow'=> 0.1
   },
   'Childs Pose'=> {
-    'Downward Facing Dog'=> 0.5,
-    'Table Top'=> 0.3,
-    'Plank'=> 0.2
+    'Downward Facing Dog'=> 0.2,
+    'Table Top'=> 0.2,
+    'Plank'=> 0.2,
+    'Cobra'=> 0.1,
+    'Four-Limb Staff'=> 0.1,
+    'Cat'=> 0.1,
+    'Cow'=> 0.1
   },
   'Table Top'=> {
     'Cat'=> 0.2,
@@ -66,9 +75,11 @@ model =   {
     'Downward Facing Dog'=> 0.2
   },
   'Cat'=> {
-    'Table Top'=> 0.4,
-    'Cow'=> 0.4,
-    'Childs Pose'=> 0.2
+    'Table Top'=> 0.3,
+    'Cow'=> 0.3,
+    'Childs Pose'=> 0.2,
+    'Cobra'=> 0.1,
+    'Upward Facing Dog'=> 0.1,
   },
   'Cow'=> {
     'Table Top'=> 0.4,
@@ -76,12 +87,15 @@ model =   {
     'Childs Pose'=> 0.2
   },
   'Upward Facing Dog'=> {
-    'Downward Facing Dog'=> 0.9,
-    'Four-Limb Staff'=> 0.1
+    'Downward Facing Dog'=> 0.5,
+    'Four-Limb Staff'=> 0.1,
+    'Childs Pose'=> 0.2,
+    'Cobra'=> 0.2
   },
   'Float to Top of Mat'=> {
-    'Forward Fold'=> 0.4,
-    'Halfway Lift'=> 0.3,
+    'Forward Fold'=> 0.3,
+    'Halfway Lift'=> 0.2,
+    'Handstand'=> 0.2,
     'Stand at Top of Mat'=> 0.2,
     'Mountain'=> 0.1
   },
