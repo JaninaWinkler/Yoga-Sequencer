@@ -1,5 +1,4 @@
 require 'json'
-require 'pry'
 
 get '/' do
   erb :index
