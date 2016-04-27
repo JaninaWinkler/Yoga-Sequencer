@@ -65,6 +65,8 @@ $('.arrowDown').click(function(){
   });
   function toggleMainPage(){
     $('#fullpage').toggleClass('hidden');
+    $('#fullpage').toggleClass('hidden', 'slow');
+    // $('.ft-tableCell').toggleClass('hidden');
   };
 
   function removeOverlay(){
@@ -154,7 +156,7 @@ $('.arrowDown').click(function(){
   };
 
   function startSlideShow(loadslides){  
-    var intervalInc = 0
+    var intervalInc = 0;
     var rated = false;
     $('#slideshow img').remove();
     $('#slideshow .pose-name').remove();
