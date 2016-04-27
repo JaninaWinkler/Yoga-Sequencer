@@ -130,6 +130,7 @@ Extended Hand-To-Big-Toe:
   Knee-To-Chest: 0.2
   Eagle: 0.1
 Knee-To-Chest:
+  Extended Hand-To-Big-Toe: 0.1
   Warrior 1: 0.1
   High Lunge: 0.1
   Tree Pose: 0.2

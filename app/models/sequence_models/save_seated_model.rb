@@ -221,6 +221,7 @@ model =   {
   'Legs-up-the-wall'=> 0.2, 
   'Reclining Bound Angle Pose'=> 0.1,
   'Seated Forward Bend'=> 0.1,
+  'Marichis Pose'=> 0.1,
   'Corpse Pose'=> 0.2
   },
   'Corpse Pose'=> {

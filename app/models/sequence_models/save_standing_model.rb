@@ -149,15 +149,16 @@ model =   {
     'Eagle'=> 0.1
   },
   'Knee-To-Chest'=> {
+    'Extended Hand-To-Big-Toe'=> 0.1,
     'Warrior 1'=> 0.1,
     'High Lunge'=> 0.1,
     'Tree Pose'=> 0.2,
     'Standing Splits'=> 0.1,
     'Dancers Pose'=> 0.1,
-    'Warrior 1'=>0.1,
     'Warrior 3'=> 0.1,
     'Low Lunge'=>0.1,
-    'Eagle'=> 0.1
+    'Eagle'=> 0.1,
+
   },
 
   'Eagle'=> {

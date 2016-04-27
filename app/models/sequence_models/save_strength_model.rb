@@ -18,7 +18,7 @@ model =   {
   'Standing'=> 0.1,
   'Transition'=> 0.1,
   'Backbend'=> 0.2,
-  'Core'=> 0.1,
+  'Core'=> 0.3,
   'Hips'=> 0.2, 
   'Savasana'=> 0.1
   },

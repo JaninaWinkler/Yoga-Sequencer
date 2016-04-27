@@ -37,8 +37,8 @@ model =   {
   'Standing'=> 0.3,
   'Seated'=> 0.2,
   'Core'=> 0.1,
-  'Hips'=> 0.1,
-  'Backbend'=> 0.1
+  'Hips'=> 0.2,
+  'Backbend'=> 0.2
   },
   'Hips'=> {
   'Standing'=> 0.2,
